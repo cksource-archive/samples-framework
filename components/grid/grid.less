@@ -1,0 +1,66 @@
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+@grid-gutter-width: 40px;
+
+.generate-grid( 100 );
+
+.generate-grid(@n, @i: 10) when (@i =< @n) {
+	.grid-width-@{i} {
+		width: unit( @i, % );
+	}
+
+	.generate-grid(@n, (@i + 5));
+}
+
+.global-is-mobile( {
+	// A starting point for the generator.
+	.grid-width-10 {
+		width: 100%;
+	}
+
+	.generate-mobile-grid( @n, @i: 20 ) when ( @i =< @n ) {
+		.grid-width-@{i} {
+			&:extend( .grid-width-10 all );
+		}
+		.generate-mobile-grid( @n, ( @i + 5 ) );
+	}
+
+	.generate-mobile-grid( 100 );
+} );
+
+*[class*="grid-width"] {
+	.box-sizing( border-box );
+	padding-left: @grid-gutter-width;
+	padding-right: @grid-gutter-width;
+	float: left;
+
+}
+
+*[class*="grid-width"], .grid-container {
+	&:after, &:before {
+		content: '';
+		display: block;
+		overflow: hidden;
+		visibility: hidden;
+		font-size: 0;
+		line-height: 0;
+		width: 0;
+		height: 0;
+	}
+}
+
+*[class*="grid-width"], .grid-container {
+	&:after {
+		clear: both;
+	}
+}
+
+.grid-container {
+	.box-sizing( border-box );
+	margin-left: auto;
+	margin-right: auto;
+}

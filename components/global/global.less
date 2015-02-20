@@ -1,0 +1,80 @@
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+@global-font-size: 						16px;
+@global-font-stack:						@font-face-roboto, Arial, Helvetica, sans-serif;
+@global-font-stack-serif:				Georgia, Times, "Times New Roman", serif;
+@global-font-stack-monospace:			Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+@global-line-height: 					1.8;
+
+@global-font-color:						#575757;
+@global-link-font-color:				#38C9DE;
+@global-link-font-color-hover:			lighten( @global-link-font-color, -10% );
+
+@global-box-background-color:			#f5f5f5;
+@global-box-border-color:				#D9D9D9;
+
+@global-flow-vgap: 						1.75em;
+
+@global-border-radius:					3px;
+
+@global-is-mobile-threshold:			850px;
+
+.global-font-size( @font-size-rem, @line-height-ratio: 1 ) {
+	@font-size-px: round( @font-size-rem * @global-font-size, 2 );
+	@line-height-rem: round( @font-size-rem * @global-line-height * @line-height-ratio, 2 );
+	@line-height-px: round( @font-size-px * @global-line-height * @line-height-ratio, 2 );
+
+	font-size: unit( @font-size-px, px );
+	font-size: unit( @font-size-rem, rem );
+	line-height: unit( @line-height-px, px );
+	line-height: unit( @line-height-rem, rem );
+}
+
+.global-font-face( @font-name, @font-path, @font-file, @font-weight: normal, @font-style: normal ) {
+	font-family: "@{font-name}";
+	src: e(%( "@{font-path}", "@{font-file}.eot" ));
+	src: e(%( "@{font-path}", "@{font-file}.eot?#iefix" )) format("embedded-opentype"),
+		e(%( "@{font-path}", "@{font-file}.woff" )) format("woff"),
+		e(%( "@{font-path}", "@{font-file}.ttf" )) format("truetype"),
+		e(%( "@{font-path}", "@{font-file}.svg#@{font-name}" )) format("svg");
+	font-weight: @font-weight;
+	font-style: @font-style;
+}
+
+.global-is-min-width( @minWidth, @block ) {
+	@media ( min-width: @minWidth ) {
+		@block();
+	}
+}
+
+.global-is-max-width( @maxWidth, @block ) {
+	@media ( max-width: @maxWidth ) {
+		@block();
+	}
+}
+
+.global-is-mobile( @block ) {
+	.global-is-max-width( @global-is-mobile-threshold, @block );
+}
+
+.global-is-desktop( @block ) {
+	.global-is-min-width( @global-is-mobile-threshold, @block );
+}
+
+.global-box-border-gradient( @direction: to right ) {
+	.vendorize( @property, @value ) {
+		-webkit-@{property}: ~"-webkit-@{value}";
+		-moz-@{property}: ~"-moz-@{value}";
+		-o-@{property}: ~"-o-@{value}";
+		@{property}: @value;
+	}
+
+	border-style: solid;
+	border-color: transparent;
+
+	.vendorize( border-image, linear-gradient( @direction, rgba(255,255,255,0), lighten( @global-box-border-color, 4% ) ) 1 stretch );
+}

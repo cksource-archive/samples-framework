@@ -1,0 +1,109 @@
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+@sdk-link-api-selector: ~"href*='#!/api'";
+@sdk-link-guide-selector: ~"href*='#!/guide'";
+@sdk-link-sample-selector: ~"href^='./'";
+
+// Limits the width of the SDK.
+main,
+header > div,
+.navigation-a > div,
+footer > div {
+	max-width: 1280px;
+	overflow: hidden;
+}
+
+// Compensate .navigation-a that overlaps .header-a due to position: absolute.
+.header-a {
+	margin-top: @navigation-a-default-height;
+}
+
+// Reqired by tree-a ::after pseudo-element hack to make the tree look full-height.
+main {
+	position: relative;
+	overflow: hidden;
+}
+
+.content {
+	// A thing border that corresponds with the one of .tree-a.
+	border-width: 1px 0;
+	.global-box-border-gradient( to left );
+	// Legacy support.
+	border-color: @global-box-border-color;
+
+	// SDK is a little bit more spacious.
+	.global-is-desktop( {
+		padding-left: 1.5*@grid-gutter-width;
+	} );
+
+	h1 {
+		// Make the header more spacious in SDK.
+		// To use .documentation in a horizontal layout.
+		display: table;
+		width: 100%;
+
+		// Documentation link header.
+		.documentation {
+			display: table-cell;
+			text-align: right;
+
+			a {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	// Used in samples/acfcustom.html.
+	ul {
+		&.spacious li {
+			margin: @global-flow-vgap/2;
+		}
+	}
+
+	// Fancy tiny icons next to links to api/guides/samples.
+	a {
+		&:not( .documentation ) {
+			&[@{sdk-link-api-selector}]:after,
+			&[@{sdk-link-guide-selector}]:after,
+			&[@{sdk-link-sample-selector}]:after {
+				content: '';
+				margin-left: .3em;
+				margin-right: .1em;
+
+				height: 10px;
+				width: 10px;
+				display: inline-block;
+				vertical-align: middle;
+
+				.border-radius( 2px );
+
+				background-color: @global-link-font-color;
+				background-position: top left;
+				background-repeat: no-repeat;
+			}
+
+			&[href*="#!/api"]:after {
+				background-image: data-uri( 'img/gear.png' );
+			}
+
+			&[href*="#!/guide"]:after {
+				background-image: data-uri( 'img/book.png' );
+			}
+
+			&[href^="./"]:after {
+				background-image: data-uri( 'img/sample.png' );
+			}
+		}
+	}
+
+	// Used in samples/sourcearea.html.
+	.inline-editor {
+		border: 1px dotted #999;
+		padding: 5px 20px;
+	}
+}

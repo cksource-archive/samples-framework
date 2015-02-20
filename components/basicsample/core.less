@@ -1,0 +1,68 @@
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+// Center the entire page.
+main .grid-container,
+header .grid-container,
+.navigation-a > div,
+footer > div {
+	max-width: 960px + 2 * @grid-gutter-width;
+	overflow: hidden;
+}
+
+// Compensate .navigation-a that overlaps .header-a due to position: absolute.
+.header-a {
+	margin-top: @navigation-a-default-height;
+}
+
+.footer-a {
+	border-top: 1px solid @global-box-border-color;
+}
+
+// Styles that allow .balloon-a to be absolutely positioned.
+header {
+	overflow: visible;
+
+	.grid-container {
+		overflow: visible;
+	}
+
+	.navigation-b {
+		overflow: visible;
+
+		ul {
+			overflow: visible;
+		}
+
+		a {
+			// Tip is relative to the anchor.
+			position: relative;
+		}
+	}
+
+	.balloon-a {
+		position: absolute;
+		left: 15px;
+		top: 48px;
+
+		// Switch the balloon arrow and position on narrow screen
+		// to make it fully visible.
+		.global-is-max-width( 1140px, {
+			right: 15px;
+			left: auto;
+
+			&:before {
+				left: auto;
+				right: 22px;
+			}
+		} );
+
+		// Don't display the balloon on mobile.
+		.global-is-mobile( {
+			display: none;
+		} );
+	}
+}

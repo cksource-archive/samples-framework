@@ -1,0 +1,149 @@
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+.content {
+	.global-font-size( .875 );
+	overflow: hidden;
+	padding-top: @global-flow-vgap;
+	padding-bottom: @global-flow-vgap;
+
+	// --- Element groups -------------------------------------------------
+
+	// Default vertical rhythm.
+	p {
+		margin: @global-flow-vgap 0;
+	}
+
+	ul, ol, pre, blockquote, textarea, .cke {
+		margin: 1.25*@global-flow-vgap 0;
+	}
+
+	code, kbd {
+		.border-radius( @global-border-radius );
+		border: 1px solid lighten( @global-box-border-color, 3% );
+		padding: 3px 4px;
+	}
+
+	pre, code, kbd, blockquote {
+		background: @global-box-background-color;
+	}
+
+	blockquote, pre {
+		background: none;
+		border-left: 4px solid @global-link-font-color;
+		padding: @global-flow-vgap 1.5*@global-flow-vgap;
+
+	}
+
+	h1, h2, h3 {
+		color: #000;
+		font-weight: 100;
+
+		// (#73)
+		code, kbd {
+			font-size: inherit;
+		}
+	}
+
+	// (#79, #86)
+	input, select, textarea:not( .cke_source ), button {
+		font: inherit;
+		color: inherit;
+	}
+
+	// --- Standalone elements --------------------------------------------
+
+	abbr {
+		border-bottom: 1px dotted #666;
+		cursor: pointer;
+	}
+
+	blockquote {
+		font-style: italic;
+		font-family: @global-font-stack-serif;
+		.global-font-size( 1 );
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	h1 {
+		.global-font-size( 2.25 );
+		margin: .75*@global-flow-vgap 0;
+	}
+
+	h2 {
+		.global-font-size( 1.5 );
+		margin: .6*@global-flow-vgap 0;
+	}
+
+	h3 {
+		.global-font-size( 1 );
+		font-weight: 500;
+		margin: .45*@global-flow-vgap 0;
+	}
+
+	input[type="button"] {
+		.appearance( button );
+	}
+
+	// (#10)
+	kbd {
+		.global-font-size( .75 );
+		font-family: @global-font-stack;
+		padding: 2px 6px;
+
+		.box-shadow(
+			0 0 4px #fff inset,
+			0 2px 0 @global-box-border-color
+		);
+	}
+
+	p {
+		img {
+			vertical-align: middle;
+		}
+
+		pre {
+			padding: @global-flow-vgap;
+		}
+	}
+
+	pre, code {
+		// (#40, #37)
+		.global-font-size( .813 );
+		font-family: @global-font-stack-monospace;
+	}
+
+	ul, ol {
+		// Nested lists need lest vertical separation.
+		ul, ol {
+			margin: .5 * @global-flow-vgap 0;
+		}
+
+		li {
+			// Give some extra vertical space to list items.
+			.global-font-size( .875, 1.2 );
+		}
+	}
+
+	textarea {
+		width: 100%;
+	}
+
+	div.todo {
+		border: 2px dotted #444;
+		padding: 10px;
+		margin: 60px 0 10px 0;
+
+		/* Remove me some day */
+		&:before {
+			content: "TODO";
+			font-weight: bold;
+		}
+	}
+}

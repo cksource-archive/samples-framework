@@ -1,0 +1,42 @@
+/*!
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+
+.footer-a {
+	.global-font-size( .8125 );
+	padding-top: 1.5*@global-flow-vgap;
+	padding-bottom: 1.5*@global-flow-vgap;
+	overflow: hidden;
+	color: lighten( @global-font-color, 20% );
+
+	p {
+		margin: 0;
+		display: inline-block;
+
+		&.footer-a {
+			&-left {
+				text-align: left;
+			}
+
+			&-right {
+				text-align: right;
+			}
+		}
+
+		.global-is-mobile( {
+			&.footer-a {
+				&-left, &-right {
+					text-align: center;
+				}
+			}
+		} );
+
+		a {
+			color: @global-link-font-color;
+			text-decoration: none;
+		}
+	}
+}

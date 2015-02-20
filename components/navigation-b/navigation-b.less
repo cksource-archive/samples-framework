@@ -1,0 +1,66 @@
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+.navigation-b {
+	text-align: right;
+	margin: 52px 0 0;
+	overflow: visible;
+
+	.global-is-mobile( {
+		text-align: center;
+		margin-top: 20px;
+
+		// Override grid h-padding.
+		padding: 0;
+	} );
+
+	ul {
+		padding: 0;
+		list-style: none;
+		margin: 0;
+		overflow: hidden;
+
+		li, li a {
+			display: inline-block;
+		}
+
+		.global-is-mobile( {
+			display: table;
+			width: 100%;
+			padding-bottom: @global-flow-vgap;
+		} );
+
+		li {
+			.global-is-mobile( {
+				display: table-row;
+			} );
+
+			& + li {
+				margin-left: 20px;
+
+				.global-is-mobile( {
+					margin-left: 0;
+				} );
+			}
+
+			a {
+				.box-sizing( border-box );
+				text-transform: uppercase;
+				text-decoration: none;
+				outline: none;
+
+				.global-is-mobile( {
+					width: 100%;
+					.border-radius( 0 );
+				} );
+
+				&:hover {
+					&:extend( .button-a-background all );
+				}
+			}
+		}
+	}
+}

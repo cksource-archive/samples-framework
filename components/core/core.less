@@ -1,0 +1,35 @@
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+	font: @global-font-size~"/"@global-line-height @global-font-stack;
+	font-weight: 300;
+	color: @global-font-color;
+}
+
+.link-a {
+	//(#96)
+	&:not([class^="cke"]) {
+		color: @global-link-font-color;
+		text-decoration: none;
+
+		&:hover {
+			color: @global-link-font-color-hover;
+		}
+	}
+}
+
+.global-is-mobile( {
+	.global-is-mobile-hidden {
+		display: none !important;
+	}
+} );

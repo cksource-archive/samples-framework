@@ -1,0 +1,56 @@
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+@balloon-a-background-color: darken( @global-box-background-color, 4% );
+
+.balloon-a {
+	.global-font-size( .75 );
+	.border-radius( @global-border-radius );
+	border-bottom: 3px solid darken( @global-box-border-color, 2% );
+
+	background: @balloon-a-background-color;
+	display: inline-block;
+	white-space: nowrap;
+	padding: .3em 1.2em;
+	font-weight: 700;
+	position: relative;
+	z-index: 1000;
+	text-transform: none;
+	color: @global-font-color;
+
+	&:hover {
+		color: @global-font-color;
+	}
+
+	&:before {
+		content: '';
+		width: 0;
+		height: 0;
+		border-style: solid;
+		position: absolute;
+	}
+}
+
+.balloon-a-ne,
+.balloon-a-nw {
+	&:before {
+		top: -13px;
+		border-width: 0 9px 15.6px 9px;
+		border-color: transparent transparent @balloon-a-background-color transparent;
+	}
+}
+
+.balloon-a-nw {
+	&:before {
+		left: 20px;
+	}
+}
+
+.balloon-a-ne {
+	&:before {
+		right: 20px;
+	}
+}

@@ -1,0 +1,176 @@
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+@tree-a-link-font-color: 					#787878;
+@tree-a-active-group-color-a:				rgba(0,0,0,0);
+@tree-a-active-group-color-b:				rgba(0,0,0,.04);
+@tree-a-active-group-background:			linear-gradient( to right, @tree-a-active-group-color-a, @tree-a-active-group-color-b );
+@tree-a-item-v-gap:							7px;
+
+.tree-a {
+	// Override grid right-padding.
+	padding-right: 0;
+	padding-bottom: 2*@global-flow-vgap;
+	text-align: right;
+
+	border-width: 1px 0 0;
+	.global-box-border-gradient();
+	// Legacy support.
+	border-color: @global-box-border-color;
+
+	.global-is-mobile( {
+		.box-shadow( none );
+		.global-box-border-gradient( to left );
+		// Legacy support.
+		border-color: @global-box-border-color;
+
+		border-right: 0;
+		padding-right: @grid-gutter-width;
+		text-align: left;
+	} );
+
+	&:after {
+		.box-shadow( -4px 0 6px rgba( 0, 0, 0, .06 ) inset );
+		border-right: 1px solid @global-box-border-color;
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		height: auto;
+		visibility: visible;
+		z-index: -100;
+		width: 30%;
+		.box-sizing( border-box );
+
+
+		.global-box-border-gradient();
+		border-width: 0 1px 1px 0;
+		// Legacy support.
+		border-color: @global-box-border-color;
+
+		.global-is-mobile( {
+			display: none;
+		} );
+	}
+
+	h2, h3 {
+		color: #000;
+	}
+
+	h2 {
+		.global-font-size( 1.125 );
+		margin-top: 25px;
+		margin-bottom: 25px;
+		padding-right: 41px;
+		font-weight: 700;
+	}
+
+	h3 {
+		.global-font-size( .875 );
+		.user-select( none );
+		cursor: pointer;
+		font-weight: 500;
+
+		padding: @tree-a-item-v-gap 40px @tree-a-item-v-gap 15px;
+		margin: 0 0 -1px;
+		position: relative;
+
+		.global-box-border-gradient();
+		border-width: 1px 0;
+		// Legacy support.
+		border-color: @global-box-border-color;
+
+		.global-is-mobile( {
+			.global-box-border-gradient( to left );
+		} );
+
+		&:after {
+			content: '';
+			background: data-uri( "img/tree-a-expander.png" ) left bottom no-repeat;
+			display: inline-block;
+			height: 16px;
+			width: 16px;
+			vertical-align: middle;
+			right: 13px;
+			position: absolute;
+			top: 12px;
+		}
+
+		&:hover, &.active {
+			background: @tree-a-active-group-background;
+
+			.global-is-mobile( {
+				background: @tree-a-active-group-color-b;
+			} );
+		}
+
+		&.active {
+			border-bottom-width: 0;
+			margin-bottom: 0;
+
+			&:after {
+				background-position: left top;
+			}
+
+			& + ul {
+				display: block;
+				border-top-width: 0;
+				background: @tree-a-active-group-background;
+
+				.global-is-mobile( {
+					background: @tree-a-active-group-color-b;
+				} );
+			}
+		}
+	}
+
+	ul {
+		margin: 0 0 -1px;
+		padding: 0;
+		display: none;
+
+		.global-box-border-gradient();
+		border-width: 0 0 1px;
+		// Legacy support.
+		border-color: @global-box-border-color;
+
+		.global-is-mobile( {
+			.global-box-border-gradient( to left );
+		} );
+
+		li {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+
+			a {
+				color: @tree-a-link-font-color;
+				.global-font-size( 0.875 );
+				font-weight: 300;
+				text-decoration: none;
+				display: block;
+				padding: @tree-a-item-v-gap 40px @tree-a-item-v-gap 20px;
+				outline: none;
+
+				&:hover {
+					color: #fff;
+					background: @global-link-font-color;
+				}
+			}
+
+			&.active a {
+				background: @global-link-font-color;
+				color: #fff;
+				font-weight: 500;
+
+				&:hover {
+					background: @global-link-font-color-hover;
+				}
+			}
+		}
+	}
+}

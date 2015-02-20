@@ -1,0 +1,92 @@
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+
+@navigation-a-background-color: #3D3D3D;
+@navigation-a-font-color: rgba( 255,255,255, .8 );
+@navigation-a-font-color-hover: #fff;
+@navigation-a-default-height: 30px;
+@navigation-a-item-gap: 23px;
+
+.navigation-a {
+	height: @navigation-a-default-height;
+	background: @navigation-a-background-color;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding: 0;
+	overflow: hidden;
+
+	.global-is-mobile( {
+		text-align: center;
+	} );
+
+	ul {
+		list-style: none;
+		margin: 0;
+		overflow: hidden;
+
+		li, li a {
+			display: inline-block;
+		}
+
+		.global-is-mobile( {
+			width: auto;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			display: inline-block;
+			float: none;
+
+			&:before, &:after {
+				display: none;
+			}
+		} );
+
+		&.navigation-a {
+			&-left {
+				text-align: left;
+
+				.global-is-mobile( {
+					padding-right: 0;
+				} );
+			}
+
+			&-right {
+				text-align: right;
+
+				.global-is-mobile( {
+					padding-left: @navigation-a-item-gap;
+				} );
+			}
+		}
+
+		li {
+			& + li {
+				margin-left: @navigation-a-item-gap;
+			}
+
+			a {
+				.global-font-size( .625 );
+				line-height: @navigation-a-default-height;
+				float: left;
+				color: @navigation-a-font-color;
+				font-weight: bold;
+				text-decoration: none;
+				text-transform: uppercase;
+
+				&:hover {
+					cursor: pointer;
+					color: @navigation-a-font-color-hover;
+				}
+
+				&.github {
+					background: data-uri( 'img/github-logo.png' ) no-repeat right center;
+					padding-right: 24px;
+				}
+			}
+		}
+	}
+}

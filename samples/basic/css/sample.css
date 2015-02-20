@@ -1,0 +1,751 @@
+/*!
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+@font-face {
+  font-family: "Roboto";
+  src: url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.eot");
+  src: url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.eot?#iefix") format("embedded-opentype"), url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.woff") format("woff"), url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.ttf") format("truetype"), url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.svg#Roboto") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../../components/font-roboto/fonts/Roboto-Light-webfont.eot");
+  src: url("../../../components/font-roboto/fonts/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../../../components/font-roboto/fonts/Roboto-Light-webfont.woff") format("woff"), url("../../../components/font-roboto/fonts/Roboto-Light-webfont.ttf") format("truetype"), url("../../../components/font-roboto/fonts/Roboto-Light-webfont.svg#Roboto") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../../components/font-roboto/fonts/Roboto-Regular-webfont.eot");
+  src: url("../../../components/font-roboto/fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../../components/font-roboto/fonts/Roboto-Regular-webfont.woff") format("woff"), url("../../../components/font-roboto/fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("../../../components/font-roboto/fonts/Roboto-Regular-webfont.svg#Roboto") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../../components/font-roboto/fonts/Roboto-Bold-webfont.eot");
+  src: url("../../../components/font-roboto/fonts/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../../components/font-roboto/fonts/Roboto-Bold-webfont.woff") format("woff"), url("../../../components/font-roboto/fonts/Roboto-Bold-webfont.ttf") format("truetype"), url("../../../components/font-roboto/fonts/Roboto-Bold-webfont.svg#Roboto") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font: 16px / 1.8 "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #575757;
+}
+.link-a:not([class^="cke"]) {
+  color: #38c9de;
+  text-decoration: none;
+}
+.link-a:not([class^="cke"]):hover {
+  color: #20aec3;
+}
+@media (max-width: 850px) {
+  .global-is-mobile-hidden {
+    display: none !important;
+  }
+}
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+.grid-width-10 {
+  width: 10%;
+}
+.grid-width-15 {
+  width: 15%;
+}
+.grid-width-20 {
+  width: 20%;
+}
+.grid-width-25 {
+  width: 25%;
+}
+.grid-width-30 {
+  width: 30%;
+}
+.grid-width-35 {
+  width: 35%;
+}
+.grid-width-40 {
+  width: 40%;
+}
+.grid-width-45 {
+  width: 45%;
+}
+.grid-width-50 {
+  width: 50%;
+}
+.grid-width-55 {
+  width: 55%;
+}
+.grid-width-60 {
+  width: 60%;
+}
+.grid-width-65 {
+  width: 65%;
+}
+.grid-width-70 {
+  width: 70%;
+}
+.grid-width-75 {
+  width: 75%;
+}
+.grid-width-80 {
+  width: 80%;
+}
+.grid-width-85 {
+  width: 85%;
+}
+.grid-width-90 {
+  width: 90%;
+}
+.grid-width-95 {
+  width: 95%;
+}
+.grid-width-100 {
+  width: 100%;
+}
+@media (max-width: 850px) {
+  .grid-width-10,
+  .grid-width-20,
+  .grid-width-25,
+  .grid-width-30,
+  .grid-width-35,
+  .grid-width-40,
+  .grid-width-45,
+  .grid-width-50,
+  .grid-width-55,
+  .grid-width-60,
+  .grid-width-65,
+  .grid-width-70,
+  .grid-width-75,
+  .grid-width-80,
+  .grid-width-85,
+  .grid-width-90,
+  .grid-width-95,
+  .grid-width-100 {
+    width: 100%;
+  }
+}
+*[class*="grid-width"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-right: 40px;
+  float: left;
+}
+*[class*="grid-width"]:after,
+.grid-container:after,
+*[class*="grid-width"]:before,
+.grid-container:before {
+  content: '';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+*[class*="grid-width"]:after,
+.grid-container:after {
+  clear: both;
+}
+.grid-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+.header-a {
+  min-height: 140px;
+  overflow: hidden;
+}
+.header-a .header-a-logo {
+  margin: 40px 0 0;
+}
+@media (max-width: 850px) {
+  .header-a .header-a-logo {
+    text-align: center;
+  }
+}
+.header-a .header-a-logo img {
+  border: transparent;
+}
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+.navigation-a {
+  height: 30px;
+  background: #3d3d3d;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 0;
+  overflow: hidden;
+}
+@media (max-width: 850px) {
+  .navigation-a {
+    text-align: center;
+  }
+}
+.navigation-a ul {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+}
+.navigation-a ul li,
+.navigation-a ul li a {
+  display: inline-block;
+}
+@media (max-width: 850px) {
+  .navigation-a ul {
+    width: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    float: none;
+  }
+  .navigation-a ul:before,
+  .navigation-a ul:after {
+    display: none;
+  }
+}
+.navigation-a ul.navigation-a-left {
+  text-align: left;
+}
+@media (max-width: 850px) {
+  .navigation-a ul.navigation-a-left {
+    padding-right: 0;
+  }
+}
+.navigation-a ul.navigation-a-right {
+  text-align: right;
+}
+@media (max-width: 850px) {
+  .navigation-a ul.navigation-a-right {
+    padding-left: 23px;
+  }
+}
+.navigation-a ul li + li {
+  margin-left: 23px;
+}
+.navigation-a ul li a {
+  font-size: 10px;
+  font-size: 0.625rem;
+  line-height: 18px;
+  line-height: 1.13rem;
+  line-height: 30px;
+  float: left;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.navigation-a ul li a:hover {
+  cursor: pointer;
+  color: #ffffff;
+}
+.navigation-a ul li a.github {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAASCAMAAACO0hVbAAAAaVBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8G612AAAAInRSTlMAnZM9G1zt9LQthRJnf1H4yifoQgHXBKZ2FuE274NrvGyPfIezhAAAAKhJREFUGNNNzlcOgzAQRdExuAIhQHpC2t3/IsOEej8s68iSn/x7FE0gNMVD5m6GOXMbKd1Zuycl2xHCCHrp7GAXcOU1Zs8sXksHF5EcqGWuBnLJgMNiByCTE8TjYscIJwF2srYD1IqNFWoe4sYieD3IF8rRJxWhx9nzAGfrAlBJ6X3dsK8GqzxAV+rMpjXvNI0DN37/tVYnJtZhH+jbyV4ylQxqbTBJhn7cHBKeuDn4LAAAAABJRU5ErkJggg==") no-repeat right center;
+  padding-right: 24px;
+}
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+.navigation-b {
+  text-align: right;
+  margin: 52px 0 0;
+  overflow: visible;
+}
+@media (max-width: 850px) {
+  .navigation-b {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0;
+  }
+}
+.navigation-b ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+}
+.navigation-b ul li,
+.navigation-b ul li a {
+  display: inline-block;
+}
+@media (max-width: 850px) {
+  .navigation-b ul {
+    display: table;
+    width: 100%;
+    padding-bottom: 1.75em;
+  }
+}
+@media (max-width: 850px) {
+  .navigation-b ul li {
+    display: table-row;
+  }
+}
+.navigation-b ul li + li {
+  margin-left: 20px;
+}
+@media (max-width: 850px) {
+  .navigation-b ul li + li {
+    margin-left: 0;
+  }
+}
+.navigation-b ul li a {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+}
+@media (max-width: 850px) {
+  .navigation-b ul li a {
+    width: 100%;
+    -webkit-border-radius: 0;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 0;
+    -moz-background-clip: padding;
+    border-radius: 0;
+    background-clip: padding-box;
+  }
+}
+/*!
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+.footer-a {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 23.4px;
+  line-height: 1.46rem;
+  padding-top: 2.625em;
+  padding-bottom: 2.625em;
+  overflow: hidden;
+  color: #8a8a8a;
+}
+.footer-a p {
+  margin: 0;
+  display: inline-block;
+}
+.footer-a p.footer-a-left {
+  text-align: left;
+}
+.footer-a p.footer-a-right {
+  text-align: right;
+}
+@media (max-width: 850px) {
+  .footer-a p.footer-a-left,
+  .footer-a p.footer-a-right {
+    text-align: center;
+  }
+}
+.footer-a p a {
+  color: #38c9de;
+  text-decoration: none;
+}
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+.content {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 25.2px;
+  line-height: 1.57rem;
+  overflow: hidden;
+  padding-top: 1.75em;
+  padding-bottom: 1.75em;
+}
+.content p {
+  margin: 1.75em 0;
+}
+.content ul,
+.content ol,
+.content pre,
+.content blockquote,
+.content textarea,
+.content .cke {
+  margin: 2.1875em 0;
+}
+.content code,
+.content kbd {
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
+  border-radius: 3px;
+  background-clip: padding-box;
+  border: 1px solid #e1e1e1;
+  padding: 3px 4px;
+}
+.content pre,
+.content code,
+.content kbd,
+.content blockquote {
+  background: #f5f5f5;
+}
+.content blockquote,
+.content pre {
+  background: none;
+  border-left: 4px solid #38c9de;
+  padding: 1.75em 2.625em;
+}
+.content h1,
+.content h2,
+.content h3 {
+  color: #000;
+  font-weight: 100;
+}
+.content h1 code,
+.content h2 code,
+.content h3 code,
+.content h1 kbd,
+.content h2 kbd,
+.content h3 kbd {
+  font-size: inherit;
+}
+.content input,
+.content select,
+.content textarea:not( .cke_source ),
+.content button {
+  font: inherit;
+  color: inherit;
+}
+.content abbr {
+  border-bottom: 1px dotted #666;
+  cursor: pointer;
+}
+.content blockquote {
+  font-style: italic;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 28.8px;
+  line-height: 1.8rem;
+}
+.content em {
+  font-style: italic;
+}
+.content h1 {
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 64.8px;
+  line-height: 4.05rem;
+  margin: 1.3125em 0;
+}
+.content h2 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 43.2px;
+  line-height: 2.7rem;
+  margin: 1.05em 0;
+}
+.content h3 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 28.8px;
+  line-height: 1.8rem;
+  font-weight: 500;
+  margin: 0.7875em 0;
+}
+.content input[type="button"] {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+.content kbd {
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 21.6px;
+  line-height: 1.35rem;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  padding: 2px 6px;
+  -webkit-box-shadow: 0 0 4px #ffffff inset, 0 2px 0 #d9d9d9;
+  -moz-box-shadow: 0 0 4px #ffffff inset, 0 2px 0 #d9d9d9;
+  box-shadow: 0 0 4px #ffffff inset, 0 2px 0 #d9d9d9;
+}
+.content p img {
+  vertical-align: middle;
+}
+.content p pre {
+  padding: 1.75em;
+}
+.content pre,
+.content code {
+  font-size: 13.01px;
+  font-size: 0.813rem;
+  line-height: 23.42px;
+  line-height: 1.46rem;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+.content ul ul,
+.content ol ul,
+.content ul ol,
+.content ol ol {
+  margin: 0.875em 0;
+}
+.content ul li,
+.content ol li {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 30.24px;
+  line-height: 1.89rem;
+}
+.content textarea {
+  width: 100%;
+}
+.content div.todo {
+  border: 2px dotted #444;
+  padding: 10px;
+  margin: 60px 0 10px 0;
+  /* Remove me some day */
+}
+.content div.todo:before {
+  content: "TODO";
+  font-weight: bold;
+}
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+.button-a,
+a.button-a {
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
+  border-radius: 3px;
+  background-clip: padding-box;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 25.2px;
+  line-height: 1.57rem;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 1.1em;
+  font-weight: 700;
+  color: #3e3e3e;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.button-a-background,
+a.button-a-background,
+.navigation-b ul li a:hover,
+a.navigation-b ul li a:hover {
+  color: #fff;
+  background: #38c9de;
+}
+.button-a-background:hover,
+a.button-a-background:hover,
+.navigation-b ul li a:hover:hover,
+a.navigation-b ul li a:hover:hover {
+  color: #fff;
+  background: #20aec3;
+}
+.button-a-icon-left,
+a.button-a-icon-left {
+  padding-left: .8em;
+}
+.button-a-icon-left:before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: .6em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+}
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+.balloon-a {
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 21.6px;
+  line-height: 1.35rem;
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
+  border-radius: 3px;
+  background-clip: padding-box;
+  border-bottom: 3px solid #d4d4d4;
+  background: #ebebeb;
+  display: inline-block;
+  white-space: nowrap;
+  padding: .3em 1.2em;
+  font-weight: 700;
+  position: relative;
+  z-index: 1000;
+  text-transform: none;
+  color: #575757;
+}
+.balloon-a:hover {
+  color: #575757;
+}
+.balloon-a:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+}
+.balloon-a-ne:before,
+.balloon-a-nw:before {
+  top: -13px;
+  border-width: 0 9px 15.6px 9px;
+  border-color: transparent transparent #ebebeb transparent;
+}
+.balloon-a-nw:before {
+  left: 20px;
+}
+.balloon-a-ne:before {
+  right: 20px;
+}
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+main .grid-container,
+header .grid-container,
+.navigation-a > div,
+footer > div {
+  max-width: 1040px;
+  overflow: hidden;
+}
+.header-a {
+  margin-top: 30px;
+}
+.footer-a {
+  border-top: 1px solid #d9d9d9;
+}
+header {
+  overflow: visible;
+}
+header .grid-container {
+  overflow: visible;
+}
+header .navigation-b {
+  overflow: visible;
+}
+header .navigation-b ul {
+  overflow: visible;
+}
+header .navigation-b a {
+  position: relative;
+}
+header .balloon-a {
+  position: absolute;
+  left: 15px;
+  top: 48px;
+}
+@media (max-width: 1140px) {
+  header .balloon-a {
+    right: 15px;
+    left: auto;
+  }
+  header .balloon-a:before {
+    left: auto;
+    right: 22px;
+  }
+}
+@media (max-width: 850px) {
+  header .balloon-a {
+    display: none;
+  }
+}
+/*
+This file is a copyrighted work of CKSource and is protected under Poland and worldwide copyright laws and treaty provisions.
+CKSource grants you permission to distribute this file exclusively as part of the CKEditor SDK.
+It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
+*/
+.adjoined-top {
+  background-color: #38c9de;
+  color: #fff;
+}
+.adjoined-top .content h1 {
+  color: #fff;
+}
+.adjoined-top .content p {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 32.4px;
+  line-height: 2.02rem;
+  font-weight: 100;
+}
+.adjoined-top .content .link-a {
+  text-decoration: underline;
+  color: inherit;
+}
+.adjoined-top .content .link-a:hover {
+  color: #e6e6e6;
+}
+.adjoined-bottom {
+  position: relative;
+}
+.adjoined-bottom:before {
+  z-index: -1;
+  content: '';
+  background: #38c9de;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9jb21wb25lbnRzL2ZvbnQtcm9ib3RvL2ZvbnQtcm9ib3RvLmxlc3MiLCIvY29tcG9uZW50cy9nbG9iYWwvZ2xvYmFsLmxlc3MiLCIvY29tcG9uZW50cy9jb3JlL2NvcmUubGVzcyIsIi9jb21wb25lbnRzL2dyaWQvZ3JpZC5sZXNzIiwiL25vZGVfbW9kdWxlcy9sZXNzaGF0L2J1aWxkL2xlc3NoYXQubGVzcyIsIi9jb21wb25lbnRzL2hlYWRlci1hL2hlYWRlci1hLmxlc3MiLCIvY29tcG9uZW50cy9uYXZpZ2F0aW9uLWEvbmF2aWdhdGlvbi1hLmxlc3MiLCIvY29tcG9uZW50cy9uYXZpZ2F0aW9uLWIvbmF2aWdhdGlvbi1iLmxlc3MiLCIvY29tcG9uZW50cy9mb290ZXItYS9mb290ZXItYS5sZXNzIiwiL2NvbXBvbmVudHMvY29udGVudC9jb250ZW50Lmxlc3MiLCIvY29tcG9uZW50cy9idXR0b24tYS9idXR0b24tYS5sZXNzIiwiL2NvbXBvbmVudHMvYmFsbG9vbi1hL2JhbGxvb24tYS5sZXNzIiwiL2NvbXBvbmVudHMvYmFzaWNzYW1wbGUvY29yZS5sZXNzIiwiL2NvbXBvbmVudHMvYmFzaWNzYW1wbGUvYWRqb2luZWQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQVNBO0VDNEJDLGFBQWEsUUFBYjtFQUNBLHlFQUFBO0VBQ0EsaUZBQXVELE9BQU8sNEZBQ2pCLE9BQU8sOEVBQ1IsT0FBTyx5RkFDTSxPQUFPLE1BSGhFO0VBSUEsZ0JBQUE7RUFDQSxrQkFBQTs7QUQvQkQ7RUN3QkMsYUFBYSxRQUFiO0VBQ0EsMEVBQUE7RUFDQSxrRkFBdUQsT0FBTyw2RkFDakIsT0FBTywrRUFDUixPQUFPLDBGQUNNLE9BQU8sTUFIaEU7RUFJQSxnQkFBQTtFQUNBLGtCQUFBOztBRDNCRDtFQ29CQyxhQUFhLFFBQWI7RUFDQSw0RUFBQTtFQUNBLG9GQUF1RCxPQUFPLCtGQUNqQixPQUFPLGlGQUNSLE9BQU8sNEZBQ00sT0FBTyxNQUhoRTtFQUlB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 */
