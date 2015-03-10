@@ -5,7 +5,7 @@ It is forbidden to copy and distribute this file in its original or modified for
 */
 
 
-.footer-a {
+.footer-a:extend( .global-styled-links all ) {
 	.global-font-size( .8125 );
 	padding-top: 1.5*@global-flow-vgap;
 	padding-bottom: 1.5*@global-flow-vgap;
@@ -33,10 +33,5 @@ It is forbidden to copy and distribute this file in its original or modified for
 				}
 			}
 		} );
-
-		a {
-			color: @global-link-font-color;
-			text-decoration: none;
-		}
 	}
 }

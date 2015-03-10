@@ -123,37 +123,28 @@ Defines global variables and mixins shared between other components.
     `@global-link-font-color`
     Default font color for anchors. 
 
-    See: [components/core/link-a](#components/core/link-a).
-
   * <a name="components/global@global-link-font-color-hover"></a>
     `@global-link-font-color-hover`
     Default font color for hovered anchors. 
 
-    See: [components/core/link-a](#components/core/link-a).
-
   * <a name="components/global@global-box-background-color"></a>
     `@global-box-background-color`
-
     Default background color for boxes.
 
   * <a name="components/global@global-box-border-color"></a>
     `@global-box-border-color`
-
     Default border color for boxes.
 
   * <a name="components/global@global-flow-vgap"></a>
     `@global-flow-vgap`
-
     Default vertical gap for content flows.
 
   * <a name="components/global@global-border-radius"></a>
     `@global-border-radius`
-
     Default border-radius to used for rounded elements.
 
   * <a name="components/global@global-is-mobile-threshold"></a>
     `@global-is-mobile-threshold`
-
     Default threshold between mobile and desktop layout.
 
     See: [components/global/.global-is-mobile](#components/global/.global-is-mobile).  
@@ -264,27 +255,8 @@ Defines global variables and mixins shared between other components.
     
     **Note**: Lesshat's `.border-image()` mixin does not support `linear-gradient` correctly.
 
-#### components/core
-
-A very low level CSS to display the page correctly, including
-HTML5 block tags for legacy browsers, `body` and `html` setup.
-
 * **Classes:**
-
-  * <a name="components/core/link-a"></a> 
-   `.link-a`
-
-    A standard styled link class compatible with the framework.
-
-    * **Example:**  
-      ```html
-      // Outputs a standard styled link.
-      <a href="foo.bar" class="link-a">Foo!</a>
-      ```
-
-    See: [components/global@global-link-font-color](#components/global@global-link-font-color).
-
-  * <a name="components/core/global-is-mobile-hidden"></a> 
+  * <a name="components/global/global-is-mobile-hidden"></a> 
    `.global-is-mobile-hidden`
 
     If applied to an element makes it hidden in mobile view.
@@ -294,7 +266,23 @@ HTML5 block tags for legacy browsers, `body` and `html` setup.
       ```html
       // Outputs a standard styled link.
       <div class="global-is-mobile-hidden">Visible on desktop and hidden on mobile</div>
-      ```
+      ```    
+  * <a name="components/global/global-styled-links"></a> 
+   `.global-styled-links`
+
+    Enables global colorful styles of `<a>` within a class which inherits from it.
+
+    * **Example:**  
+      ```less
+      // All <a> in .foo will match global link styles.
+      .foo:extend( .global-styled-links all ) { ... }
+      ```         
+    See [components/global@global-link-font-color](#components/global@global-link-font-color).
+
+#### components/core
+
+A very low level CSS to display the page correctly, including
+HTML5 block tags for legacy browsers, `body` and `html` setup.
 
 ***
 ### Standard
@@ -459,7 +447,7 @@ Absolutely positioned horizontal bar, usually with useful links to project-relat
   </nav>
   ```
 
-**Note:** Use [components/core/global-is-mobile-hidden](#components/core/global-is-mobile-hidden) class to hide some items for best mobile performance.
+**Note:** Use [components/global/global-is-mobile-hidden](#components/global/global-is-mobile-hidden) class to hide some items for best mobile performance.
 
 #### components/navigation-b
 

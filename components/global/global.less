@@ -78,3 +78,20 @@ It is forbidden to copy and distribute this file in its original or modified for
 
 	.vendorize( border-image, linear-gradient( @direction, rgba(255,255,255,0), lighten( @global-box-border-color, 4% ) ) 1 stretch );
 }
+
+.global-styled-links {
+	a {
+		color: @global-link-font-color;
+		text-decoration: none;
+
+		&:hover {
+			color: @global-link-font-color-hover;
+		}
+	}
+}
+
+.global-is-mobile( {
+	.global-is-mobile-hidden {
+		display: none !important;
+	}
+} );
