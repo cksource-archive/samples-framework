@@ -56,107 +56,107 @@ See the [example](#example) to know more.
 ## Components
 
 1. Bootstrap
-  1. **[components/global](#components-global)**
-  1. **[components/core](#components-core)**
+  1. **[global](#global)**
+  1. **[core](#core)**
 1. Standard
-  1. **[components/balloon-a](#components-balloon-a)**
-  1. **[components/button-a](#components-button-a)**
-  1. **[components/content](#components-content)**
-  1. **[components/font-roboto](#components-font-roboto)**
-  1. **[components/footer-a](#components-footer-a)**
-  1. **[components/grid](#components-grid)**
-  1. **[components/header-a](#components-header-a)**
-  1. **[components/navigation-a](#components-navigation-a)**
-  1. **[components/navigation-b](#components-navigation-b)**
-  1. **[components/tree-a](#components-tree-a)**
-  1. **[components/tip-a](#components-tip-a)**
+  1. **[balloon-a](#balloon-a)**
+  1. **[button-a](#button-a)**
+  1. **[content](#content)**
+  1. **[font-roboto](#font-roboto)**
+  1. **[footer-a](#footer-a)**
+  1. **[grid](#grid)**
+  1. **[header-a](#header-a)**
+  1. **[navigation-a](#navigation-a)**
+  1. **[navigation-b](#navigation-b)**
+  1. **[tree-a](#tree-a)**
+  1. **[tip-a](#tip-a)**
 1. Application-specific
-  1. **[components/sdk](#components-sdk)**
-  1. **[components/basicsample](#components-basicsample)**
-    1. **[components/basicsample/adjoined](#components/basicsample/adjoined)**
+  1. **[sdk](#sdk)**
+  1. **[basicsample](#basicsample)**
+    1. **[basicsample/adjoined](#basicsample/adjoined)**
 
 ***
 ### Bootstrap
 
-#### components/global
+#### global
 
 Defines global variables and mixins shared between other components.
 
 * **Variables:**
-  * <a name="components/global@global-font-size"></a>
+  * <a name="global@global-font-size"></a>
     `@global-font-size`
     Default font size used for html/bo1dy. 
 
-    See: [components/core](#components-core).
+    See: [core](#core).
 
-  * <a name="components/global@global-font-stack"></a>
+  * <a name="global@global-font-stack"></a>
     `@global-font-stack`
     Default font-face stack used for html/body. 
 
-    See: [components/core](#components-core).
+    See: [core](#core).
 
-  * <a name="components/global@global-font-stack-serif"></a>
+  * <a name="global@global-font-stack-serif"></a>
     `@global-font-stack-serif`
     Default serif font-face stack. 
 
-    See: [components/core](#components-core).
+    See: [core](#core).
 
-  * <a name="components/global@global-font-stack-monospace"></a>
+  * <a name="global@global-font-stack-monospace"></a>
     `@global-font-stack-monospace`
     Default monospace font-face stack. 
 
-    See: [components/core](#components-core).
+    See: [core](#core).
 
-  * <a name="components/global@global-font-color"></a>
+  * <a name="global@global-font-color"></a>
     `@global-font-color`
     Default font color. 
 
-    See: [components/core](#components-core).
+    See: [core](#core).
 
-  * <a name="components/global@global-line-height"></a>
+  * <a name="global@global-line-height"></a>
     `@global-line-height`
     Default line height for html/body. 
 
-    See: [components/core](#components-core).
+    See: [core](#core).
 
-  * <a name="components/global@global-link-font-color"></a>
+  * <a name="global@global-link-font-color"></a>
     `@global-link-font-color`
     Default font color for anchors. 
 
-  * <a name="components/global@global-link-font-color-hover"></a>
+  * <a name="global@global-link-font-color-hover"></a>
     `@global-link-font-color-hover`
     Default font color for hovered anchors. 
 
-  * <a name="components/global@global-box-background-color"></a>
+  * <a name="global@global-box-background-color"></a>
     `@global-box-background-color`
     Default background color for boxes.
 
-  * <a name="components/global@global-box-border-color"></a>
+  * <a name="global@global-box-border-color"></a>
     `@global-box-border-color`
     Default border color for boxes.
 
-  * <a name="components/global@global-flow-vgap"></a>
+  * <a name="global@global-flow-vgap"></a>
     `@global-flow-vgap`
     Default vertical gap for content flows.
 
-  * <a name="components/global@global-border-radius"></a>
+  * <a name="global@global-border-radius"></a>
     `@global-border-radius`
     Default border-radius to used for rounded elements.
 
-  * <a name="components/global@global-is-mobile-threshold"></a>
+  * <a name="global@global-is-mobile-threshold"></a>
     `@global-is-mobile-threshold`
     Default threshold between mobile and desktop layout.
 
-    See: [components/global/.global-is-mobile](#components/global/.global-is-mobile).  
+    See: [global/.global-is-mobile](#global/.global-is-mobile).  
 
 * **Mixins:**
 
-  * <a name="components/global/.global-font-size"></a> 
+  * <a name="global/.global-font-size"></a> 
    `.global-font-size( @font-size-rem, @line-height-ratio: 1 )`
 
     Default font size mixin. 
-    It computes line-height considering [components/global@global-line-height](#components/global@global-line-height)
-    and font-size using [components/global@global-font-size](#components/global@global-font-size)
+    It computes line-height considering [global@global-line-height](#global@global-line-height)
+    and font-size using [global@global-font-size](#global@global-font-size)
     The output contains fallback values in "px" for font-size and line-height.
 
     * **Example:**  
@@ -177,7 +177,7 @@ Defines global variables and mixins shared between other components.
       }
       ```
 
-  * <a name="components/global/.global-font-face"></a> 
+  * <a name="global/.global-font-face"></a> 
    `.global-font-face( @font-name, @font-path, @font-file, @font-weight: normal, @font-style: normal )`
 
     Generates `@font-face` block for given webfont.
@@ -204,17 +204,17 @@ Defines global variables and mixins shared between other components.
     **Note**: Lesshat's `.font-face` mixin produces paths relative to Lesshat
     in `node_modules`. This mixin bypasses that problem.
 
-  * <a name="components/global/.global-is-min-width"></a> 
+  * <a name="global/.global-is-min-width"></a> 
    `.global-is-min-width( @minWidth, @block )`
 
     Wraps given block with `min-width` `@media` query.
 
-  * <a name="components/global/.global-is-max-width"></a> 
+  * <a name="global/.global-is-max-width"></a> 
    `.global-is-max-width( @maxWidth, @block )`
 
     Wraps given block with `max-width` `@media` query.
 
-  * <a name="components/global/.global-is-mobile"></a> 
+  * <a name="global/.global-is-mobile"></a> 
    `.global-is-mobile( @block )`
 
     Wraps given block with rules specific for mobile view.
@@ -238,9 +238,9 @@ Defines global variables and mixins shared between other components.
       }
       ```
 
-    See: [components/global@global-is-mobile-threshold](#components/global@global-is-mobile-threshold).  
+    See: [global@global-is-mobile-threshold](#global@global-is-mobile-threshold).  
 
-  * <a name="components/global/.global-is-desktop"></a> 
+  * <a name="global/.global-is-desktop"></a> 
    `.global-is-desktop( @block )`
 
     Wraps given block with rules specific for desktop view.
@@ -248,7 +248,7 @@ Defines global variables and mixins shared between other components.
     **Note**: This mixin should not be used to specify default rules 
     because IE8 does not support @media queries.  
 
-  * <a name="components/global/.global-box-border-gradient"></a> 
+  * <a name="global/.global-box-border-gradient"></a> 
    `.global-box-border-gradient( @direction: to right )`
 
     Generates standard border gradient with given direction.
@@ -256,18 +256,18 @@ Defines global variables and mixins shared between other components.
     **Note**: Lesshat's `.border-image()` mixin does not support `linear-gradient` correctly.
 
 * **Classes:**
-  * <a name="components/global/global-is-mobile-hidden"></a> 
+  * <a name="global/global-is-mobile-hidden"></a> 
    `.global-is-mobile-hidden`
 
     If applied to an element makes it hidden in mobile view.
-    See: [components/global/.global-is-mobile](#components/global/.global-is-mobile).    
+    See: [global/.global-is-mobile](#global/.global-is-mobile).    
 
     * **Example:**  
       ```html
       // Outputs a standard styled link.
       <div class="global-is-mobile-hidden">Visible on desktop and hidden on mobile</div>
       ```    
-  * <a name="components/global/global-styled-links"></a> 
+  * <a name="global/global-styled-links"></a> 
    `.global-styled-links`
 
     Enables global colorful styles of `<a>` within a class which inherits from it.
@@ -277,9 +277,9 @@ Defines global variables and mixins shared between other components.
       // All <a> in .foo will match global link styles.
       .foo:extend( .global-styled-links all ) { ... }
       ```         
-    See [components/global@global-link-font-color](#components/global@global-link-font-color).
+    See [global@global-link-font-color](#global@global-link-font-color).
 
-#### components/core
+#### core
 
 A very low level CSS to display the page correctly, including
 HTML5 block tags for legacy browsers, `body` and `html` setup.
@@ -287,7 +287,7 @@ HTML5 block tags for legacy browsers, `body` and `html` setup.
 ***
 ### Standard
 
-#### components/balloon-a
+#### balloon-a
 
 Balloon with an arrow.
 
@@ -303,28 +303,28 @@ Balloon with an arrow.
   <span class="balloon-a balloon-a-nw">I'm a balloon with an arrow.</span>
   ```
 
-#### components/button-a
+#### button-a
 
 * **Classes:**
   
-  * <a name="components/button-a/.button-a"></a> 
+  * <a name="button-a/.button-a"></a> 
    `.button-a`
 
    A generic button, no background color.
 
-  * <a name="components/button-a/.button-a-background"></a> 
+  * <a name="button-a/.button-a-background"></a> 
    `.button-a-background`
 
    A generic button with a background. Useful for hover/active button states.
 
-   See: [components/global@global-link-font-color](#components/global@global-link-font-color).  
+   See: [global@global-link-font-color](#global@global-link-font-color).  
 
-  * <a name="components/button-a/.button-a-icon-left"></a> 
+  * <a name="button-a/.button-a-icon-left"></a> 
    `.button-a-icon-left`
 
    A button with an 18x18px icon to the left.
 
-#### components/content
+#### content
 
 A default styleset for content blocks including paragraphs, lists, blockquotes, headers, pre-formatted, code, textarea etc.
 
@@ -336,16 +336,16 @@ A default styleset for content blocks including paragraphs, lists, blockquotes, 
   </div>
   ```
 
-#### components/font-roboto
+#### font-roboto
 
 A component that brings `@font-face` for [Roboto webfont](http://www.google.com/fonts/specimen/Roboto).
 
 * **Variables:**
   * `@font-face-roboto`
     
-    See: [components/global@global-font-stack](#components/global@global-font-stack).  
+    See: [global@global-font-stack](#global@global-font-stack).  
 
-#### components/footer-a
+#### footer-a
 
 A default styleset for content blocks including paragraphs, lists, blockquotes, headers, pre-formatted, code, textarea etc.
 
@@ -356,7 +356,7 @@ A default styleset for content blocks including paragraphs, lists, blockquotes, 
   </footer>
   ```
 
-#### components/grid
+#### grid
 
 A grid system for the framework.
 
@@ -387,9 +387,9 @@ A grid system for the framework.
   </div>
   ```
 
-**Note:** In mobile view, all columns are stacked vertically. See: [components/global/.global-is-mobile](#components/global/.global-is-mobile).  
+**Note:** In mobile view, all columns are stacked vertically. See: [global/.global-is-mobile](#global/.global-is-mobile).  
 
-#### components/header-a
+#### header-a
 
 Generic header of the website. 
 
@@ -415,7 +415,7 @@ Generic header of the website.
   </header>
   ```
 
-#### components/navigation-a
+#### navigation-a
 
 Absolutely positioned horizontal bar, usually with useful links to project-related resources i.e. GitHub, bug tracker, blog, etc.
 
@@ -447,11 +447,11 @@ Absolutely positioned horizontal bar, usually with useful links to project-relat
   </nav>
   ```
 
-**Note:** Use [components/global/global-is-mobile-hidden](#components/global/global-is-mobile-hidden) class to hide some items for best mobile performance.
+**Note:** Use [global/global-is-mobile-hidden](#global/global-is-mobile-hidden) class to hide some items for best mobile performance.
 
-#### components/navigation-b
+#### navigation-b
 
-Horizontal navigation between essential sub-pages of the project. Placed in [components/header-a](#components-header-a) in consists of [components-button-a](#components/button-a) elements.
+Horizontal navigation between essential sub-pages of the project. Placed in [header-a](#header-a) in consists of [components-button-a](#button-a) elements.
 
 * **Classes:**
   * `.navigation-b`
@@ -467,7 +467,7 @@ Horizontal navigation between essential sub-pages of the project. Placed in [com
   </nav>
   ```
 
-#### components/tree-a
+#### tree-a
 
 A vertical two-level collapsible menu. Best for long navigation lists of multiple levels.
 
@@ -507,7 +507,7 @@ A vertical two-level collapsible menu. Best for long navigation lists of multipl
   </nav>
   ```
 
-#### components/tip-a
+#### tip-a
 
 An informational box.
 
@@ -532,14 +532,14 @@ An informational box.
 ***
 ### Application-specific
 
-#### components/sdk
+#### sdk
 
 A default look and layout of SDK. It includes:
 
  * Wide, spacious horizontally centered layout.
  * `<h1>` header with `.documentation` button.
  * Fancy links with tiny icons indicating whether it is a sample, guide or API link.
- * Integration with [components/tree-a](#components-tree-a).
+ * Integration with [tree-a](#tree-a).
  
 See [SDK sample](samples/sdk).
 
@@ -561,18 +561,18 @@ See [SDK sample](samples/sdk).
   * `@sdk-link-guide-selector` Element selector for guide link.
   * `@sdk-link-sample-selector` Element selector for sample link.
 
-#### components/basicsample
+#### basicsample
 
-A default look of a basic sample. A centered slightly narrower layout than [components-sdk](#components-sdk).
+A default look of a basic sample. A centered slightly narrower layout than [components-sdk](#sdk).
  
-See [Basicsample](samples/basicsample), [components/adjoined](components-adjoined).
+See [Basicsample](samples/basicsample), [basicsample/adjoined](#basicsample/adjoined).
 
 * **Subcomponents:**
 
-  * <a name="components/basicsample/adjoined"></a> 
-    **components/basicsample/adjoined**
+  * <a name="basicsample/adjoined"></a> 
+    **basicsample/adjoined**
 
-    An extension of [components/basicsample](#components-basicsample). Designed to present an instance of editor with a fancy header and short description.
+    An extension of [basicsample](#basicsample). Designed to present an instance of editor with a fancy header and short description.
 
     * **Classes:**
       * `.adjoined-top`
