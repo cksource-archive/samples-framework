@@ -4,7 +4,7 @@ CKSource grants you permission to distribute this file exclusively as part of th
 It is forbidden to copy and distribute this file in its original or modified form in any other way than together with the CKEditor SDK that this file constitutes an integral part of.
 */
 
-@grid-gutter-width: 40px;
+@grid-gutter-width: 30px;
 
 .generate-grid( 100 );
 
@@ -62,4 +62,16 @@ It is forbidden to copy and distribute this file in its original or modified for
 	.box-sizing( border-box );
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.grid-container-nested {
+	*[class*="grid-width"] {
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
 }

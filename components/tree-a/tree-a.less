@@ -10,10 +10,14 @@ It is forbidden to copy and distribute this file in its original or modified for
 @tree-a-active-group-background:			linear-gradient( to right, @tree-a-active-group-color-a, @tree-a-active-group-color-b );
 @tree-a-item-v-gap:							7px;
 
+.tree-a-active-item( @color: @global-link-font-color ) {
+	background: @color;
+	.background-image( linear-gradient( to right, #fff 0%, @color 30%, @color 100% ) );
+}
+
 .tree-a {
 	// Override grid right-padding.
 	padding-right: 0;
-	padding-bottom: 2*@global-flow-vgap;
 	text-align: right;
 
 	border-width: 1px 0 0;
@@ -32,29 +36,48 @@ It is forbidden to copy and distribute this file in its original or modified for
 		text-align: left;
 	} );
 
-	&:after {
+	&-standalone {
+		border-width: 1px 1px 1px 0;
+		border-style: solid;
+		border-right-color: @global-box-border-color;
 		.box-shadow( -4px 0 6px rgba( 0, 0, 0, .06 ) inset );
-		border-right: 1px solid @global-box-border-color;
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		height: auto;
-		visibility: visible;
-		z-index: -100;
-		width: 30%;
-		.box-sizing( border-box );
-
 
 		.global-box-border-gradient();
-		border-width: 0 1px 1px 0;
 		// Legacy support.
 		border-color: @global-box-border-color;
 
-		.global-is-mobile( {
-			display: none;
-		} );
+		& > *:first-child {
+			border-top: 0;
+		}
+	}
+
+	&-layout {
+		&:after {
+			.box-shadow( -4px 0 6px rgba( 0, 0, 0, .06 ) inset );
+			.box-sizing( border-box );
+
+			border-right: 1px solid @global-box-border-color;
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			height: auto;
+			visibility: visible;
+			z-index: -100;
+
+			// It's a hack. Must be changed if grid-class is different.
+			width: 30%;
+
+			.global-box-border-gradient();
+			border-width: 0 1px 1px 0;
+			// Legacy support.
+			border-color: @global-box-border-color;
+
+			.global-is-mobile( {
+				display: none;
+			} );
+		}
 	}
 
 	h2, h3 {
@@ -157,18 +180,19 @@ It is forbidden to copy and distribute this file in its original or modified for
 				outline: none;
 
 				&:hover {
-					color: #fff;
-					background: @global-link-font-color;
+					color: @tree-a-link-font-color;
+					background: @tree-a-active-group-background;
 				}
 			}
 
 			&.active a {
-				background: @global-link-font-color;
 				color: #fff;
 				font-weight: 500;
+				.tree-a-active-item();
 
 				&:hover {
-					background: @global-link-font-color-hover;
+					color: #fff;
+					.tree-a-active-item( @global-link-font-color-hover );
 				}
 			}
 		}

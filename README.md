@@ -362,6 +362,7 @@ A grid system for the framework.
 
 * **Classes:**
   * `.grid-container`
+  * `.grid-container-nested` For use inside `.grid-width-*`, discards left/right padding of first/last column.
   * `.grid-width-[10,15,20,...,100]`
 
 * **Variables:**
@@ -376,7 +377,7 @@ A grid system for the framework.
       </div>
       <div class="grid-width-50">  
         Column 2
-        <div class="grid-container">
+        <div class="grid-container [grid-container-nested]">
           <div class="grid-width-30">  
             Column 2-1
           </div>
@@ -473,6 +474,8 @@ A vertical two-level collapsible menu. Best for long navigation lists of multipl
 
 * **Classes:**
   * `.tree-a`
+  * `.tree-a-layout` A tree that is used to create a layout.
+  * `.tree-a-standalone` A tree that can be used within [content](#content).
   
 * **Variables:**
   * `@tree-a-link-font-color`

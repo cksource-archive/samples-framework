@@ -29,7 +29,7 @@ For licensing, see license.html or http://sdk.ckeditor.com/license.html.
 		</div>
 	</header>
 	<main class="grid-container">
-		<nav class="tree-a grid-width-30">
+		<nav class="tree-a tree-a-layout grid-width-30">
 			<h2>Didicerim libentius</h2>
 
 			<h3>Semel ait in vita</h3>
@@ -145,12 +145,27 @@ function helloWorld() {
 
 			<div class="grid-container">
 				<div class="grid-width-50">
-					<h3>Nested left column</h3>
-					<p>Cum audissem Antiochum, Brute, ut solebam, cum M. An dolor longissimus quisque miserrimus, voluptatem non optabiliorem diuturnitas facit? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
+					<h3>Nested left column with tree component</h3>
+					<p>Cum audissem Antiochum, Brute? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
+
+					<nav class="tree-a tree-a-standalone">
+						<h3>First item</h3>
+						<h3 class="active">Second item, active</h3>
+						<ul>
+							<li class=""><a href="#">Second item, first sub-item, active</a></li>
+							<li class="active"><a href="#">Second item, second sub-item</a></li>
+						</ul>
+						<h3>Third item</h3>
+					</nav>
+
+					<p>Cum audissem Antiochum, Brute? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
 				</div>
+
 				<div class="grid-width-50">
 					<h3>Nested right column</h3>
 					<p>Quisque miserrimus, voluptatem non optabiliorem diuturnitas facit? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
+					<p>Cum audissem Antiochum, Brute, ut solebam, cum M. An dolor longissimus quisque  Antiochum, Brute, ut solebam, cum M. An dolor longissimus miserrimus, voluptatem non optabiliorem diuturnitas facit? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
+					<p>Cum audissem Antiochum, Brute? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
 				</div>
 			</div>
 
