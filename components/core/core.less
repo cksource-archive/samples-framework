@@ -17,14 +17,11 @@ body, html {
 }
 
 .link-a {
-	//(#96)
-	&:not([class^="cke"]) {
-		color: @global-link-font-color;
-		text-decoration: none;
+	color: @global-link-font-color;
+	text-decoration: none;
 
-		&:hover {
-			color: @global-link-font-color-hover;
-		}
+	&:hover {
+		color: @global-link-font-color-hover;
 	}
 }
 
