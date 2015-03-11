@@ -81,12 +81,13 @@ It is forbidden to copy and distribute this file in its original or modified for
 					cursor: pointer;
 					color: @navigation-a-font-color-hover;
 				}
-
-				&.github {
-					background: data-uri( 'img/github-logo.png' ) no-repeat right center;
-					padding-right: 24px;
-				}
 			}
 		}
+	}
+}
+
+.icon-navigation-a-github {
+	&:before, &:after {
+		background-image: data-uri( 'img/icon-navigation-a-github.png' );
 	}
 }
