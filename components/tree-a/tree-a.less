@@ -13,6 +13,10 @@ It is forbidden to copy and distribute this file in its original or modified for
 .tree-a-active-item( @color: @global-link-font-color ) {
 	background: @color;
 	.background-image( linear-gradient( to right, #fff 0%, @color 30%, @color 100% ) );
+
+	.global-is-mobile( {
+		background: @color;
+	} );
 }
 
 .tree-a {
@@ -20,38 +24,37 @@ It is forbidden to copy and distribute this file in its original or modified for
 	padding-right: 0;
 	text-align: right;
 
-	border-width: 1px 0 0;
-	.global-box-border-gradient();
-	// Legacy support.
-	border-color: @global-box-border-color;
-
 	.global-is-mobile( {
-		.box-shadow( none );
-		.global-box-border-gradient( to left );
-		// Legacy support.
-		border-color: @global-box-border-color;
-
-		border-right: 0;
-		padding-right: @grid-gutter-width;
 		text-align: left;
 	} );
 
 	&-standalone {
-		border-width: 1px 1px 1px 0;
-		border-style: solid;
-		border-right-color: @global-box-border-color;
+		border-right: 1px solid @global-box-border-color;
 		.box-shadow( -4px 0 6px rgba( 0, 0, 0, .06 ) inset );
 
+		.global-is-mobile( {
+			.box-shadow( none );
+			border: 0;
+			padding-right: 0;
+		} );
+	}
+
+	&-layout {
+		border-width: 1px 0 0;
 		.global-box-border-gradient();
 		// Legacy support.
 		border-color: @global-box-border-color;
 
-		& > *:first-child {
-			border-top: 0;
-		}
-	}
+		.global-is-mobile( {
+			.global-box-border-gradient( to left );
+			// Legacy support.
+			border-color: @global-box-border-color;
 
-	&-layout {
+			border-right: 0;
+			padding-right: @grid-gutter-width;
+			text-align: left;
+		} );
+
 		&:after {
 			.box-shadow( -4px 0 6px rgba( 0, 0, 0, .06 ) inset );
 			.box-sizing( border-box );
@@ -108,7 +111,8 @@ It is forbidden to copy and distribute this file in its original or modified for
 		border-color: @global-box-border-color;
 
 		.global-is-mobile( {
-			.global-box-border-gradient( to left );
+			border-color: @global-box-border-color;
+			.border-image( none );
 		} );
 
 		&:after {
@@ -162,7 +166,8 @@ It is forbidden to copy and distribute this file in its original or modified for
 		border-color: @global-box-border-color;
 
 		.global-is-mobile( {
-			.global-box-border-gradient( to left );
+			border-color: @global-box-border-color;
+			.border-image( none );
 		} );
 
 		li {
@@ -181,7 +186,7 @@ It is forbidden to copy and distribute this file in its original or modified for
 
 				&:hover {
 					color: @tree-a-link-font-color;
-					background: @tree-a-active-group-background;
+					.tree-a-active-item( lighten( @tree-a-active-group-color-b, 50% ) );
 				}
 			}
 
