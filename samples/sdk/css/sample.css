@@ -794,11 +794,11 @@ It is forbidden to copy and distribute this file in its original or modified for
     display: none;
   }
 }
-.tree-a h2,
-.tree-a h3 {
+.tree-a h1,
+.tree-a h2 {
   color: #000;
 }
-.tree-a h2 {
+.tree-a h1 {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 32.4px;
@@ -808,7 +808,7 @@ It is forbidden to copy and distribute this file in its original or modified for
   padding-right: 41px;
   font-weight: 700;
 }
-.tree-a h3 {
+.tree-a h2 {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 25.2px;
@@ -832,7 +832,7 @@ It is forbidden to copy and distribute this file in its original or modified for
   border-color: #d9d9d9;
 }
 @media (max-width: 900px) {
-  .tree-a h3 {
+  .tree-a h2 {
     border-color: #d9d9d9;
     -webkit-border-image: none;
     -moz-border-image: none;
@@ -840,7 +840,7 @@ It is forbidden to copy and distribute this file in its original or modified for
     border-image: none;
   }
 }
-.tree-a h3:after {
+.tree-a h2:after {
   content: '';
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAABgCAYAAAAU0fKgAAAAAXNSR0IArs4c6QAAAa1JREFUWAntmD1KBEEQhRdFQdBEMfQEBoaGsmbexcQLeAUTEfEGHsJTiOAJDGVBzPx73zglVTPT4+50WgVvt6fqVdH9qjup2axvh3JdCU/CWwvW+IgVbVORa+FT+C6AGBy4wXA8CCR+CXfCsbDdgjU+YnDghiJUJfAinAolIwYHLjmNcS62RvWx5IbccuCS02iCOFRki8saXHLIbdTmg3NiRwLV8XngI4bBJUZ3mlbxgWBmt1r4ZNb4zODio82DBfblXwhWhDU+s1CAbUC0IxjpovUTY+0tHKEk4oYynluw9hZEHGvjmbKAN1od2kiw6iJRoPoqWxF2MnQHrBvE4IR3QLI3NEFYurPSc/ZFcp0KpAKpQCqQCqQCqUAqkAqkAqlAKpAKpAKpwJgCkwcQjDUmj0CqhzBVY6DSIMomd129eoOo0ijsQ5k3wl63gr7DKKw0jLPZ0asSzoV1VygM45gVQfbzRLhWwP4f5ZsTkP2NA9d+v5f63RFrd4j53xHelXQpbLnkcISSiGz9XjhwibYMIpbaeGLszn+vjcSrLhIFqq+yFZn8mChgttJz/gG1pNDP8Sj7HQAAAABJRU5ErkJggg==") left bottom no-repeat;
   display: inline-block;
@@ -851,30 +851,30 @@ It is forbidden to copy and distribute this file in its original or modified for
   position: absolute;
   top: 12px;
 }
-.tree-a h3:hover,
-.tree-a h3.active {
+.tree-a h2:hover,
+.tree-a h2.active {
   background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.04));
 }
 @media (max-width: 900px) {
-  .tree-a h3:hover,
-  .tree-a h3.active {
+  .tree-a h2:hover,
+  .tree-a h2.active {
     background: rgba(0, 0, 0, 0.04);
   }
 }
-.tree-a h3.active {
+.tree-a h2.active {
   border-bottom-width: 0;
   margin-bottom: 0;
 }
-.tree-a h3.active:after {
+.tree-a h2.active:after {
   background-position: left top;
 }
-.tree-a h3.active + ul {
+.tree-a h2.active + ul {
   display: block;
   border-top-width: 0;
   background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.04));
 }
 @media (max-width: 900px) {
-  .tree-a h3.active + ul {
+  .tree-a h2.active + ul {
     background: rgba(0, 0, 0, 0.04);
   }
 }
