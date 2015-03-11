@@ -107,7 +107,7 @@ It is forbidden to copy and distribute this file in its original or modified for
 		cursor: pointer;
 		font-weight: 500;
 
-		padding: @tree-a-item-v-gap 40px @tree-a-item-v-gap 15px;
+		padding: @tree-a-item-v-gap (40px - @icon-size - @icon-margin) @tree-a-item-v-gap 15px;
 		margin: 0 0 -1px;
 		position: relative;
 
@@ -121,17 +121,8 @@ It is forbidden to copy and distribute this file in its original or modified for
 			.border-image( none );
 		} );
 
-		&:after {
-			content: '';
-			background: data-uri( "img/tree-a-expander.png" ) left bottom no-repeat;
-			display: inline-block;
-			height: 16px;
-			width: 16px;
-			vertical-align: middle;
-			right: 13px;
-			position: absolute;
-			top: 12px;
-		}
+		// Enable expander icons. Collapsed is default.
+		&:extend( .icon-pos-right all, .icon-tree-a-collapsed all );
 
 		&:hover, &.active {
 			background: @tree-a-active-group-background;
@@ -145,9 +136,8 @@ It is forbidden to copy and distribute this file in its original or modified for
 			border-bottom-width: 0;
 			margin-bottom: 0;
 
-			&:after {
-				background-position: left top;
-			}
+			// Enable expanded icon.
+			&:extend( .icon-tree-a-expanded all );
 
 			& + ul {
 				display: block;
@@ -207,5 +197,24 @@ It is forbidden to copy and distribute this file in its original or modified for
 				}
 			}
 		}
+	}
+}
+
+.icon-tree-a-expanded,
+.icon-tree-a-collapsed {
+	&:before, &:after {
+		background-image: data-uri( 'img/icon-tree-a-collapser.png' );
+	}
+}
+
+.icon-tree-a-expanded {
+	&:before, &:after {
+		background-position: left top;
+	}
+}
+
+.icon-tree-a-collapsed {
+	&:before, &:after {
+		background-position: left bottom;
 	}
 }
