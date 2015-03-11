@@ -33,6 +33,7 @@ a.button-a-background {
 .button-a-icon-left,
 a.button-a-icon-left {
 	padding-left: .8em;
+	margin-left: 1.5em;
 }
 
 .button-a-icon-left:before {
@@ -43,4 +44,24 @@ a.button-a-icon-left {
 	margin-right: .6em;
 	vertical-align: middle;
 	background-repeat: no-repeat;
+}
+
+.button-a-mobile-collapsed,
+a.button-a-mobile-collapsed {
+	.global-is-mobile( {
+		.border-radius( 100px );
+		width: @button-a-height;
+		padding: 0;
+		text-indent: -999px;
+		overflow: hidden;
+		position: relative;
+		text-align: center;
+
+		&:before {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -9px 0 0 -9px;
+		}
+	} );
 }
