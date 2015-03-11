@@ -17,8 +17,38 @@ a.button-a {
 	color: darken( @global-font-color, 10% );
 	white-space: nowrap;
 	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+
+	&.icon-pos-left {
+		padding-left: .8em;
+	}
+
+	&.icon-pos-right {
+		padding-right: .8em;
+	}
+
+	&.button-a-mobile-collapsed {
+		.global-is-mobile( {
+			.border-radius( 100px );
+			width: @button-a-height;
+			padding: 0;
+			text-indent: -999px;
+			overflow: hidden;
+			position: relative;
+			text-align: center;
+
+			&:before {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin: -9px 0 0 -9px;
+			}
+		} );
+	}
 }
 
+// It's outside of the namespace above to allow inheritance with :extend().
 .button-a-background,
 a.button-a-background {
 	color: #fff;
@@ -28,39 +58,4 @@ a.button-a-background {
 		color: #fff;
 		background: @global-link-font-color-hover;
 	}
-}
-
-.button-a-icon-left,
-a.button-a-icon-left {
-	padding-left: .8em;
-}
-
-.button-a-icon-left:before {
-	content: '';
-	display: inline-block;
-	width: 18px;
-	height: 18px;
-	margin-right: .6em;
-	vertical-align: middle;
-	background-repeat: no-repeat;
-}
-
-.button-a-mobile-collapsed,
-a.button-a-mobile-collapsed {
-	.global-is-mobile( {
-		.border-radius( 100px );
-		width: @button-a-height;
-		padding: 0;
-		text-indent: -999px;
-		overflow: hidden;
-		position: relative;
-		text-align: center;
-
-		&:before {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin: -9px 0 0 -9px;
-		}
-	} );
 }
