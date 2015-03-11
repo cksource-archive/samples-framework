@@ -28,7 +28,7 @@ module.exports = function( grunt ) {
 
 					sourceMap: true,
 					sourceMapFileInline: true,
-					sourceMapRootpath: '/'
+					sourceMapRootpath: '../../../'
 				}
 			}
 		},
