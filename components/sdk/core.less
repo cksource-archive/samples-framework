@@ -88,15 +88,15 @@ main {
 			}
 
 			&[href*="#!/api"]:after {
-				background-image: data-uri( 'img/gear.png' );
+				background-image: data-uri( 'img/icon-sdk-gear.png' );
 			}
 
 			&[href*="#!/guide"]:after {
-				background-image: data-uri( 'img/book.png' );
+				background-image: data-uri( 'img/icon-sdk-book.png' );
 			}
 
 			&[href^="./"]:after {
-				background-image: data-uri( 'img/sample.png' );
+				background-image: data-uri( 'img/icon-sdk-sample.png' );
 			}
 		}
 	}
@@ -105,5 +105,11 @@ main {
 	.inline-editor {
 		border: 1px dotted #999;
 		padding: 5px 20px;
+	}
+}
+
+.icon-sdk-documentation {
+	&:before, &:after {
+		background-image: data-uri( "img/icon-sdk-documentation.png" );
 	}
 }
