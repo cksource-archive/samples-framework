@@ -35,7 +35,11 @@ main {
 	// Legacy support.
 	border-color: @global-box-border-color;
 
-	h1 {
+	.global-is-mobile( {
+		.border-image( none );
+	} );
+
+	& > h1 {
 		// Make the header more spacious in SDK.
 		// To use .documentation in a horizontal layout.
 		display: table;

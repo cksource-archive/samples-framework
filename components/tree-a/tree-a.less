@@ -10,6 +10,10 @@ It is forbidden to copy and distribute this file in its original or modified for
 @tree-a-active-group-background:			linear-gradient( to right, @tree-a-active-group-color-a, @tree-a-active-group-color-b );
 @tree-a-item-v-gap:							7px;
 
+.tree-a-box-shadow {
+	.box-shadow( -8px 0 6px -4px rgba( 0, 0, 0, .06 ) inset );
+}
+
 .tree-a-active-item( @color: @global-link-font-color ) {
 	background: @color;
 	.background-image( linear-gradient( to right, #fff 0%, @color 30%, @color 100% ) );
@@ -29,14 +33,20 @@ It is forbidden to copy and distribute this file in its original or modified for
 	} );
 
 	&-standalone {
+		.tree-a-box-shadow;
 		border-right: 1px solid @global-box-border-color;
-		.box-shadow( -4px 0 6px rgba( 0, 0, 0, .06 ) inset );
+		overflow: hidden;
+		padding-bottom: 1px;
 
 		.global-is-mobile( {
 			.box-shadow( none );
 			border: 0;
 			padding-right: 0;
 		} );
+
+		& > *:last-child {
+			border-bottom: 0;
+		}
 	}
 
 	&-layout {
@@ -46,17 +56,13 @@ It is forbidden to copy and distribute this file in its original or modified for
 		border-color: @global-box-border-color;
 
 		.global-is-mobile( {
-			.global-box-border-gradient( to left );
-			// Legacy support.
-			border-color: @global-box-border-color;
-
-			border-right: 0;
+			.border-image( none );
 			padding-right: @grid-gutter-width;
 			text-align: left;
 		} );
 
 		&:after {
-			.box-shadow( -4px 0 6px rgba( 0, 0, 0, .06 ) inset );
+			.tree-a-box-shadow;
 			.box-sizing( border-box );
 
 			border-right: 1px solid @global-box-border-color;
