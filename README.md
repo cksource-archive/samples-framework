@@ -66,6 +66,7 @@ See the [example](#example) to know more.
   1. **[footer-a](#footer-a)**
   1. **[grid](#grid)**
   1. **[header-a](#header-a)**
+  1. **[icon](#icon)**
   1. **[navigation-a](#navigation-a)**
   1. **[navigation-b](#navigation-b)**
   1. **[tree-a](#tree-a)**
@@ -318,12 +319,7 @@ Balloon with an arrow.
    A generic button with a background. Useful for hover/active button states.
 
    See: [global@global-link-font-color](#global@global-link-font-color).  
-
-  * <a name="button-a/.button-a-icon-left"></a> 
-   `.button-a-icon-left`
-
-   A button with an 18x18px icon to the left.
-
+  
 #### content
 
 A default styleset for content blocks including paragraphs, lists, blockquotes, headers, pre-formatted, code, textarea etc.
@@ -414,6 +410,27 @@ Generic header of the website.
       </nav>
     </div>
   </header>
+  ```
+
+#### icon
+
+Generic icons framework. Icons may be used along with [button-a](#button-a) or standalone.
+
+* **Classes:**
+  * `.icon-pos-left`
+  * `.icon-pos-right`
+
+* **Variables:**
+  * `@icon-size`
+  * `@icon-margin`
+
+* **Example:**  
+  ```html
+  // Button
+  <a href="#" class="button-a icon-pos-left icon-tree-a-collapsed">icon-pos-left</a>
+
+  // Standalone
+  <span class="icon-pos-left icon-tree-a-collapsed">icon-pos-left</span>
   ```
 
 #### navigation-a
