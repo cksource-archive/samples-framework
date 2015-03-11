@@ -47,13 +47,14 @@ main {
 		width: 100%;
 
 		// Documentation link header.
-		.documentation {
+		.sdk-documentation {
 			display: table-cell;
 			text-align: right;
 
 			a {
 				display: inline-block;
 				vertical-align: middle;
+				margin-left: 1.5em;
 			}
 		}
 	}
@@ -67,7 +68,7 @@ main {
 
 	// Fancy tiny icons next to links to api/guides/samples.
 	a {
-		&:not( .documentation ) {
+		&:not( .sdk-documentation ) {
 			&[@{sdk-link-api-selector}]:after,
 			&[@{sdk-link-guide-selector}]:after,
 			&[@{sdk-link-sample-selector}]:after {
