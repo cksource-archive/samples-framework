@@ -14,7 +14,7 @@ a.button-a {
 	line-height: @button-a-height;
 	padding: 0 1.1em;
 	font-weight: 700;
-	color: darken( @global-font-color, 10% );
+	color: darken( @global-font-color, 10% ) !important;
 	white-space: nowrap;
 	text-decoration: none;
 	display: inline-block;
@@ -51,7 +51,7 @@ a.button-a {
 // It's outside of the namespace above to allow inheritance with :extend().
 .button-a-background,
 a.button-a-background {
-	color: #fff;
+	color: #fff !important;
 	background: @global-link-font-color;
 
 	&:hover {

@@ -11,8 +11,8 @@ It is forbidden to copy and distribute this file in its original or modified for
 @global-line-height: 					1.8;
 
 @global-font-color:						#575757;
-@global-link-font-color:				#38C9DE;
-@global-link-font-color-hover:			lighten( @global-link-font-color, -10% );
+@global-link-font-color:				#00B7D2;
+@global-link-font-color-hover:			darken( @global-link-font-color, 2% );
 
 @global-box-background-color:			#f5f5f5;
 @global-box-border-color:				#D9D9D9;
@@ -80,9 +80,11 @@ It is forbidden to copy and distribute this file in its original or modified for
 }
 
 .global-styled-links {
-	a {
+	a:not( [class^="cke"] ) {
 		color: @global-link-font-color;
 		text-decoration: none;
+		// text-decoration: underline;
+		border-bottom: 1px dotted @global-link-font-color;
 
 		&:hover {
 			color: @global-link-font-color-hover;
