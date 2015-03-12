@@ -359,11 +359,11 @@ A grid system for the framework.
 * **Classes:**
   * `.grid-container`
   * `.grid-container-nested` For use inside `.grid-width-*`, discards left/right padding of first/last column.
-  * `.grid-width-[10,15,20,...,100]`
+  * `.grid-width-[10,20,30,...,100]`
 
 * **Variables:**
-  * `@grid-gutter-width`
-    Gap between the columns.
+  * `@grid-gutter-width` Gap between the columns.
+  * `@grid-width-step`
 
 * **Example:**  
   ```html

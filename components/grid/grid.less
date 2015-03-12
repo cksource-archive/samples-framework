@@ -5,15 +5,16 @@ It is forbidden to copy and distribute this file in its original or modified for
 */
 
 @grid-gutter-width: 4%;
+@grid-width-step: 10;
 
 .generate-grid( 100 );
 
-.generate-grid(@n, @i: 10) when (@i =< @n) {
+.generate-grid( @n, @i: 10 ) when (@i =< @n) {
 	.grid-width-@{i} {
 		width: unit( @i, % );
 	}
 
-	.generate-grid(@n, (@i + 5));
+	.generate-grid( @n, ( @i + @grid-width-step ) );
 }
 
 .global-is-mobile( {
@@ -26,7 +27,7 @@ It is forbidden to copy and distribute this file in its original or modified for
 		.grid-width-@{i} {
 			&:extend( .grid-width-10 all );
 		}
-		.generate-mobile-grid( @n, ( @i + 5 ) );
+		.generate-mobile-grid( @n, ( @i + @grid-width-step ) );
 	}
 
 	.generate-mobile-grid( 100 );
