@@ -75,9 +75,6 @@ It is forbidden to copy and distribute this file in its original or modified for
 			visibility: visible;
 			z-index: -100;
 
-			// It's a hack. Must be changed if grid-class is different.
-			width: 30%;
-
 			.global-box-border-gradient();
 			border-width: 0 1px 1px 0;
 			// Legacy support.
@@ -86,6 +83,13 @@ It is forbidden to copy and distribute this file in its original or modified for
 			.global-is-mobile( {
 				display: none;
 			} );
+
+			// Generate :after widths for specific grids.
+			.widths( 100 );
+			.widths( @n, @i: 10 ) when (@i =< @n) {
+				.grid-width-@{i}& { width: unit( @i, % ); }
+				.widths( @n, ( @i + @grid-width-step ) );
+			}
 		}
 	}
 
