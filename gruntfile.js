@@ -1,6 +1,9 @@
 /**
  * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
- * Licensed under the terms of the GNU GPL license v3 or later. See LICENSE.md for more information.
+ * Licensed under the terms of the MIT license. See LICENSE.md for more information.
+ Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ For licensing, see LICENSE.md
+ *
  */
 
 'use strict';

@@ -1,3 +1,8 @@
+/*
+ Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ Licensed under the terms of the MIT license. See LICENSE.md for details.
+*/
+
 'use strict';
 
 ( function() {
