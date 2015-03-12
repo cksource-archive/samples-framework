@@ -32,33 +32,40 @@ For licensing, see license.html or http://sdk.ckeditor.com/license.html.
 		<nav class="tree-a tree-a-layout grid-width-30">
 			<h1>Didicerim libentius</h1>
 
-			<h2>Semel ait in vita</h2>
-			<h2 class="active">Crasso, quem semel</h2>
-			<ul>
-				<li class=""><a href="#">Hoc loco tenere se</a></li>
-				<li class=""><a href="#">Tu vero, inquam, ducas licet</a></li>
-				<li class="active"><a href="#">Tu vero, inquam, ducas licet</a></li>
-				<li class=""><a href="#">Tu vero, inquam, ducas licet</a></li>
-			</ul>
+				<h2>Semel ait in vita</h2>
+				<ul>
+					<li><a href="#">Hoc loco tenere se</a></li>
+				</ul>
 
-			<h2>Semel ait in vita</h2>
-			<ul>
-				<li><a href="#">Tu vero, inquam, ducas licet</a></li>
-			</ul>
+				<h2 class="active">Crasso, quem semel</h2>
+				<ul>
+					<li><a href="#">Hoc loco tenere se</a></li>
+					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
+					<li class="active"><a href="#">Tu vero, inquam, ducas licet</a></li>
+					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
+				</ul>
+
+				<h2>Semel ait in vita</h2>
+				<ul>
+					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
+				</ul>
 
 			<h1>Lorem ipsum dolor sit amet</h1>
-			<h2>Semel ait in vita</h2>
-			<ul>
-				<li><a href="#">Tu vero, inquam, ducas licet</a></li>
-			</ul>
-			<h2>Semel ait in vita, inquam, ducas licetinquam, ducas licet</h2>
-			<ul>
-				<li><a href="#">Tu vero, inquam, ducas licet</a></li>
-			</ul>
-			<h2>Semel ait in vita</h2>
-			<ul>
-				<li><a href="#">Tu vero, inquam, ducas licet</a></li>
-			</ul>
+
+				<h2>Semel ait in vita</h2>
+				<ul>
+					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
+				</ul>
+
+				<h2>Semel ait in vita, inquam, ducas licetinquam, ducas licet</h2>
+				<ul>
+					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
+				</ul>
+
+				<h2>Semel ait in vita</h2>
+				<ul>
+					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
+				</ul>
 		</nav>
 		<section class="content grid-width-70">
 			<h1>
@@ -158,12 +165,18 @@ function helloWorld() {
 						<h1>Didicerim libentius</h1>
 
 						<h2>First item</h2>
-						<h2 class="active">Second item, active</h2>
 						<ul>
-							<li class=""><a href="#">Second item, first sub-item, active</a></li>
-							<li class="active"><a href="#">Second item, second sub-item</a></li>
+							<li><a href="#">Second item, first sub-item, active</a></li>
+						</ul>
+						<h2>Second item, active</h2>
+						<ul>
+							<li><a href="#">Second item, first sub-item, active</a></li>
+							<li><a href="#">Second item, second sub-item</a></li>
 						</ul>
 						<h2>Third item</h2>
+						<ul>
+							<li><a href="#">Second item, first sub-item, active</a></li>
+						</ul>
 					</nav>
 
 					<p>Cum audissem Antiochum, Brute? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
@@ -236,6 +249,8 @@ function helloWorld() {
 			</ul>
 		</div>
 	</nav>
+
+	<script src="../../components/tree-a/js/tree-a.js"></script>
 	<script>
 		CKEDITOR.replace( 'editor1' );
 	</script>
