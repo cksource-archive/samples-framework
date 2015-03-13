@@ -22,7 +22,7 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 	} );
 }
 
-.tree-a {
+.tree-a:extend( .global-styled-links all ) {
 	// Override grid right-padding.
 	padding-right: 0;
 	text-align: right;
@@ -109,11 +109,9 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 		.user-select( none );
 		cursor: pointer;
 		font-weight: 500;
-
 		padding: @tree-a-item-v-gap (40px - @icon-size - @icon-margin) @tree-a-item-v-gap 15px;
 		margin: 0 0 -1px;
 		position: relative;
-
 		.global-box-border-gradient();
 		border-width: 1px 0;
 		// Legacy support.
@@ -135,9 +133,44 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 			} );
 		}
 
-		&.active {
+		&.tree-a-no-sub {
+			padding-top: 0;
+			padding-bottom: 0;
+
+			a {
+				display: block;
+				color: #000;
+				border: none;
+				&:extend( .icon-pos-right all, .icon-tree-a-link all );
+				padding: @tree-a-item-v-gap 0;
+				opacity: 1;
+			}
+
+			&.tree-a-active {
+				.tree-a-active-item();
+
+				&:hover {
+					color: #fff;
+					.tree-a-active-item( @global-link-font-color-hover );
+				}
+
+				a {
+					color: #fff;
+					font-weight: 500;
+					&:extend( .icon-tree-a-link-active all );
+				}
+			}
+
+			// <a> gets the icon.
+			&:after {
+				display: none;
+			}
+		}
+
+		&.tree-a-active {
 			border-bottom-width: 0;
 			margin-bottom: 0;
+			background: @tree-a-active-group-background;
 
 			// Enable expanded icon.
 			&:extend( .icon-tree-a-expanded all );
@@ -155,9 +188,9 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 	}
 
 	ul {
-		margin: 0 0 -1px;
 		padding: 0;
 		display: none;
+		margin: 0 0 -1px !important;
 
 		.global-box-border-gradient();
 		border-width: 0 0 1px;
@@ -189,17 +222,18 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					.tree-a-active-item( lighten( @tree-a-active-group-color-b, 50% ) );
 				}
 			}
+		}
+	}
 
-			&.active a {
-				color: #fff;
-				font-weight: 500;
-				.tree-a-active-item();
+	li.tree-a-active a {
+		color: #fff;
+		font-weight: 500;
 
-				&:hover {
-					color: #fff;
-					.tree-a-active-item( @global-link-font-color-hover );
-				}
-			}
+		.tree-a-active-item();
+
+		&:hover {
+			color: #fff;
+			.tree-a-active-item( @global-link-font-color-hover );
 		}
 	}
 }
@@ -218,6 +252,25 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 }
 
 .icon-tree-a-collapsed {
+	&:before, &:after {
+		background-position: left bottom;
+	}
+}
+
+.icon-tree-a-link,
+.icon-tree-a-link-active {
+	&:before, &:after {
+		background-image: data-uri( 'img/icon-tree-a-link.png' );
+	}
+}
+
+.icon-tree-a-link {
+	&:before, &:after {
+		background-position: left top;
+	}
+}
+
+.icon-tree-a-link-active {
 	&:before, &:after {
 		background-position: left bottom;
 	}
