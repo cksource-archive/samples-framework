@@ -33,13 +33,29 @@ module.exports = function( grunt ) {
 					sourceMapFileInline: true,
 					sourceMapRootpath: '../../../'
 				}
+			},
+
+			docs: {
+				files: {
+					'docs/css/docs.css' :'docs/less/docs.less'
+				},
+
+				options: {
+					ieCompat: true,
+					paths: [ 'docs/' ],
+					relativeUrls: true,
+
+					sourceMap: true,
+					sourceMapFileInline: true,
+					sourceMapRootpath: '../../'
+				}
 			}
 		},
 
 		watch: {
 			less: {
 				files: '<%= less.dev.src %>',
-				tasks: [ 'less:dev' ],
+				tasks: [ 'less' ],
 				options: {
 					nospawn: true
 				}
