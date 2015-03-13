@@ -48,7 +48,8 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 		// Permalinks to headings.
 		a.content-heading-anchor {
 			fotnt-weight: 100;
-			opacity: .2;
+			vertical-align: middle;
+			opacity: 0;
 			border: 0;
 		}
 
@@ -59,7 +60,7 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 		}
 
 		&:target {
-			.keyframes( ~'targetLinkOpacity, 0%{ opacity: .2 } 100%{ opacity: 1 }' );
+			.keyframes( ~'targetLinkOpacity, 0%{ opacity: 0 } 100%{ opacity: 1 }' );
 
 			a {
 				.animation( targetLinkOpacity .5s linear alternate );
