@@ -65,13 +65,15 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 }
 
 .grid-container-nested {
-	*[class*="grid-width"] {
-		&:first-child {
-			padding-left: 0;
-		}
+	.global-is-desktop( {
+		*[class*="grid-width"] {
+			&:first-child {
+				padding-left: 0;
+			}
 
-		&:last-child {
-			padding-right: 0;
+			&:last-child {
+				padding-right: 0;
+			}
 		}
-	}
+	} );
 }
