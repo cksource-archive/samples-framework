@@ -21,209 +21,63 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 			</h1>
 			<nav class="navigation-b grid-width-70">
 				<ul>
-					<li><a href="../sdk" class="button-a button-a-background">Generic SDK</a></li>
-					<li><a href="../basic" class="button-a">Basic</a></li>
-					<li><a href="../basic-a11yc" class="button-a">Custom</a></li>
+					<li><a href="../../docs" class="button-a">Documentation</a></li>
+					<li><a href="../" class="button-a button-a-background">Samples</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
 	<main class="grid-container">
 		<nav class="tree-a tree-a-layout grid-width-30">
-			<h1>Didicerim libentius</h1>
+			<h1>Tree level-1</h1>
+			<h2>Tree level-1-1</h2>
+			<ul>
+				<li><a href="#">Tree level-1-1-1</a></li>
+				<li><a href="#">Tree level-1-1-2</a></li>
+			</ul>
 
-				<h2>Semel ait in vita</h2>
-				<ul>
-					<li><a href="#">Hoc loco tenere se</a></li>
-				</ul>
+			<h2 class="tree-a-active">Tree level-1-2</h2>
+			<ul>
+				<li><a href="#">Tree level-1-2-1</a></li>
+				<li class="tree-a-active"><a href="#">Tree level-1-2-2</a></li>
+			</ul>
 
-				<h2 class="active">Crasso, quem semel</h2>
-				<ul>
-					<li><a href="#">Hoc loco tenere se</a></li>
-					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
-					<li class="active"><a href="#">Tu vero, inquam, ducas licet</a></li>
-					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
-				</ul>
-
-				<h2>Semel ait in vita</h2>
-				<ul>
-					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
-				</ul>
-
-			<h1>Lorem ipsum dolor sit amet</h1>
-
-				<h2>Semel ait in vita</h2>
-				<ul>
-					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
-				</ul>
-
-				<h2>Semel ait in vita, inquam, ducas licetinquam, ducas licet</h2>
-				<ul>
-					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
-				</ul>
-
-				<h2>Semel ait in vita</h2>
-				<ul>
-					<li><a href="#">Tu vero, inquam, ducas licet</a></li>
-				</ul>
+			<h1>Tree level-2</h1>
+			<h2>Tree level-2-1</h2>
+			<ul>
+				<li><a href="#">Tree level-2-1-1</a></li>
+				<li><a href="#">Tree level-2-1-2</a></li>
+			</ul>
+			<h2 class="tree-a-no-sub"><a href="#">Tree level-2-1</a></h2>
+			<h2 class="tree-a-no-sub tree-a-active"><a href="#">Tree level-2-2</a></h2>
+			<h2 class="tree-a-no-sub"><a href="#">Tree level-2-3</a></h2>
+			<h2 class="tree-a-no-sub"><a href="#">Tree level-2-4</a></h2>
 		</nav>
 		<section class="content grid-width-70">
 			<h1>
-				Lorem ipsum dolor sit amet leo
+				SDK Layout
 				<span class="sdk-documentation">
-					<a href="#" class="button-a button-a-background button-a-mobile-collapsed icon-pos-left icon-sdk-documentation">Documentation</a>
+					<a href="#" class="button-a button-a-background button-a-mobile-collapsed icon-pos-left icon-sdk-documentation">Fancy Documentation Button</a>
 				</span>
 			</h1>
 
-			<h2>Table of contents</h2>
+			<h2 id="sdk-specific">SDK-specific elements <a href="#sdk-specific" class="content-heading-anchor" title="Permalink to this headline">&para;</a></h2>
 
-			<ol>
-				<li><a href="#anchor-simple">Simple paragraph</a></li>
-				<li><a href="#anchor-pre">Pre–formatted text</a></li>
-				<li><a href="#anchor-list">List structures</a></li>
-				<li><a href="#anchor-keyboard">Keyboard references</a></li>
-				<li><a href="#anchor-ckeditor">CKEditor in content</a></li>
-				<li><a href="#anchor-nested">Nested grid layout</a></li>
-				<li><a href="#anchor-quoted">Quoted text</a></li>
-				<li><a href="#anchor-tips">Tips and alerts</a></li>
-				<li><a href="#anchor-balloons">Balloons</a></li>
-				<li><a href="#anchor-icons">Icons</a></li>
-			</ol>
-
-			<h2 id="anchor-simple">Simple paragraph</h2>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				<b>Quid enim?</b> <code>foo()</code> <i>Duo Reges: constructio interrete.</i>
-				A primo, ut opinor, animantium ortu petitur <a href="#!/api">origo summi</a> boni.
-				Iam quae <a href="#!/guide">corporis sunt</a>, ea nec auctoritatem cum animi partibus, comparandam et cognitionem
-				habent faciliorem. <b>Nulla erit controversia.</b> Qua igitur re ab deo vincitur, si aeternitate
-				non vincitur? Ego quoque, inquit, <a href="./index.html">didicerim libentius</a> si quid attuleris, quam te reprehenderim.
-				<a href="#">Putabam equidem satis, inquit, me dixisse.</a>
-			</p>
-
-			<h2 id="anchor-pre">Pre–formatted text</h2>
+			<p>SDK comes with <a href="../../docs#sdk">pre-defined icons</a> for specific types of links: <a href="#!/api">API link</a>, <a href="#!/guide">Guide Links</a>, <a href="./index.html">Link to the sample</a>.</p>
 
 <pre>
-function helloWorld() {
-    console.log( "Hello world!" );
-}
+&lt;a href=&quot;#!/api&quot;&gt;API link&lt;/a&gt;,
+&lt;a href=&quot;#!/guide&quot;&gt;Guide Links&lt;/a&gt;,
+&lt;a href=&quot;./index.html&quot;&gt;Link to the sample&lt;/a&gt;
 </pre>
 
-			<h2 id="anchor-list">List structures</h2>
+			<h2 id="anchor-ckeditor">CKEditor in content <a href="#anchor-ckeditor" class="content-heading-anchor" title="Permalink to this headline">&para;</a></h2>
 
-			<h3>Ordered list</h3>
+			<p>It's easy to put CKEditor in SDK <code>.content</code>:</p>
 
-			<ol>
-				<li>Itaque primos congressus copulationesque et consuetudinum instituendarum voluntates fieri propter voluptatem;
-					<ol>
-						<li>Cum audissem Antiochum, Brute, ut solebam, cum M.</li>
-						<li>An me, inquam, nisi te audire vellem, censes haec dicturum fuisse?</li>
-					</ol>
-				</li>
-				<li>An me, inquam, nisi te audire vellem, censes haec dicturum fuisse?</li>
-			</ol>
-
-			<h3>Unordered list</h3>
-
-			<ul>
-				<li>Itaque primos congressus copulationesque et consuetudinum instituendarum voluntates fieri propter voluptatem;
-					<ul>
-						<li>Cum audissem Antiochum, Brute, ut solebam, cum M.</li>
-						<li>An me, inquam, nisi te audire vellem, censes haec dicturum fuisse?</li>
-					</ul>
-				</li>
-				<li>An me, inquam, nisi te audire vellem, censes haec dicturum fuisse?</li>
-			</ul>
-
-			<h2 id="anchor-keyboard">Keyboard references</h2>
-
-			<p>Use <kbd>Alt</kbd>+<kbd>0</kbd> to dictum in una re latissime patet. Use <kbd>Alt</kbd>+<kbd>F10</kbd> to dictum in una re latissime patet, then use <kbd>Tab</kbd> and <kbd>Shift</kbd>+<kbd>Tab</kbd>
-				to dictum in una re latissime patet and <kbd>Arrow</kbd> keys to dictum in una re latissime patet.</p>
-
-			<h2 id="anchor-ckeditor">CKEditor in content</h2>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Quid enim?</b> <code>foo()</code> <i>Duo Reges: constructio interrete.</i> A primo, ut opinor, animantium ortu petitur origo summi boni. Iam quae corporis sunt, ea nec auctoritatem cum animi partibus, comparandam et cognitionem habent faciliorem. <b>Nulla erit controversia.</b> Qua igitur re ab deo vincitur, si aeternitate non vincitur? Ego quoque, inquit, didicerim libentius si quid attuleris, quam te reprehenderim. <a href="#">Putabam equidem satis, inquit, me dixisse.</a> </p>
-
-<textarea cols="80" id="editor1" name="editor1" rows="5" data-sample="1" data-sample-short>
-&lt;p&gt;Textarea contents.&lt;/p&gt;
-</textarea>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Quid enim?</b> <code>foo()</code> <i>Duo Reges: constructio interrete.</i> A primo, ut opinor, animantium ortu petitur origo summi boni. Iam quae corporis sunt, ea nec auctoritatem cum animi partibus, comparandam et cognitionem habent faciliorem. <b>Nulla erit controversia.</b> Qua igitur re ab deo vincitur, si aeternitate non vincitur? Ego quoque, inquit, didicerim libentius si quid attuleris, quam te reprehenderim. <a href="#">Putabam equidem satis, inquit, me dixisse.</a> </p>
-
-			<h2 id="anchor-nested">Nested grid layout</h2>
-
-			<p>
-				Cum audissem Antiochum, Brute, ut solebam, cum M. An dolor longissimus quisque miserrimus
-			</p>
-
-			<div class="grid-container">
-				<div class="grid-width-50">
-					<h3>Nested left column with tree component</h3>
-					<p>Cum audissem Antiochum, Brute? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
-
-					<nav class="tree-a tree-a-standalone">
-						<h1>Didicerim libentius</h1>
-
-						<h2>First item</h2>
-						<ul>
-							<li><a href="#">Second item, first sub-item, active</a></li>
-						</ul>
-						<h2>Second item, active</h2>
-						<ul>
-							<li><a href="#">Second item, first sub-item, active</a></li>
-							<li><a href="#">Second item, second sub-item</a></li>
-						</ul>
-						<h2>Third item</h2>
-						<ul>
-							<li><a href="#">Second item, first sub-item, active</a></li>
-						</ul>
-					</nav>
-
-					<p>Cum audissem Antiochum, Brute? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
-				</div>
-
-				<div class="grid-width-50">
-					<h3>Nested right column</h3>
-					<p>Quisque miserrimus, voluptatem non optabiliorem diuturnitas facit? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
-					<p>Cum audissem Antiochum, Brute, ut solebam, cum M. An dolor longissimus quisque  Antiochum, Brute, ut solebam, cum M. An dolor longissimus miserrimus, voluptatem non optabiliorem diuturnitas facit? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
-					<p>Cum audissem Antiochum, Brute? <a href="#">Quamquam tu hanc copiosiorem etiam soles dicere.</a> <b>Nihil illinc huc pervenit.</b> </p>
-				</div>
-			</div>
-
-			<h2 id="anchor-quoted">Quoted text</h2>
-
-			<blockquote cite='http://loripsum.net'>
-				Crasso, quem semel ait in vita risisse Lucilius, non contigit, ut ea re minus agelastoj ut ait idem, vocaretur.
-			</blockquote>
-
-			<h2 id="anchor-tips">Tips and alerts</h2>
-
-			<div class="tip-a">
-				Quae contraria sunt his, malane? Hoc loco tenere se Triarius non potuit. Tu vero, inquam, ducas licet, si sequetur; <a href="#">Quo modo autem philosophus loquitur?</a> <b>Quo modo?</b> Videmus igitur ut conquiescere ne infantes quidem possint. Itaque ab his ordiamur. <b>Explanetur igitur.</b> <b>At certe gravius.</b>
-			</div>
-
-			<div class="tip-a tip-a-alert">
-				Quae contraria sunt his, malane? Hoc loco tenere se Triarius non potuit. Tu vero, inquam, ducas licet, si sequetur; <a href="#">Quo modo autem philosophus loquitur?</a> <b>Quo modo?</b> Videmus igitur ut conquiescere ne infantes quidem possint. Itaque ab his ordiamur. <b>Explanetur igitur.</b> <b>At certe gravius.</b>
-			</div>
-
-			<h2 id="anchor-balloons">Balloons</h2>
-			<p>
-				<span class="balloon-a balloon-a-nw">I'm a balloon (arrow NW)</span>
-				<span class="balloon-a balloon-a-ne">I'm a balloon (arrow NE)</span>
-			</p>
-
-			<h2 id="anchor-icons">Icons</h2>
-			<h3>Buttons</h3>
-			<p>
-				<span class="button-a icon-pos-left icon-tree-a-collapsed">icon-pos-left</span>
-				<span class="button-a button-a-background icon-pos-right icon-sdk-documentation">icon-pos-right</span>
-				<span class="button-a button-a-background icon-pos-left icon-navigation-a-github">icon-pos-left</span>
-			</p>
-			<h3>Standalone</h3>
-			<p>
-				<span class="icon-pos-left icon-tree-a-collapsed">icon-pos-left</span>,
-				<span class="icon-pos-right icon-tree-a-expanded">icon-pos-right</span>
-			</p>
+			<textarea cols="80" id="editor1" name="editor1" rows="5" data-sample="1" data-sample-short>
+			&lt;p&gt;Textarea contents.&lt;/p&gt;
+			</textarea>
 		</section>
 	</main>
 	<footer class="footer-a grid-container">

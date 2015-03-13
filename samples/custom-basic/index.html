@@ -21,9 +21,8 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 			</h1>
 			<nav class="navigation-b grid-width-70">
 				<ul>
-					<li><a href="../sdk" class="button-a">Generic SDK</a></li>
-					<li><a href="../basic" class="button-a">Basic</a></li>
-					<li><a href="../basic-a11yc" class="button-a button-a-background">Custom</a></li>
+					<li><a href="../../docs" class="button-a">Documentation</a></li>
+					<li><a href="../" class="button-a button-a-background">Samples</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -32,18 +31,33 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 		<div class="adjoined-top">
 			<div class="grid-container">
 				<div class="content grid-width-100">
-					<p>
-						If you can see CKEditor below, it means that the installation succeeded.
-						You can now try out your new editor version, see its features, and when you are ready to move on, check some of the <a href="#sample-customize">most useful resources</a> recommended below.
-					</p>
+					<h1>Custom colors!</h1>
+					<p>This sample implements a custom colors with 1LOC.</p>
+				</div>
+			</div>
+		</div>
+		<div class="adjoined-bottom">
+			<div class="grid-container">
+				<div class="grid-width-100">
+					<div id="editor">
+						<h1>Hello world!</h1>
+						<p>I'm the instance of <a href="http://ckeditor.com">CKEditor</a>.</p>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="grid-container">
 			<div class="grid-width-100 content">
 				<section>
-					<h2>Whatever</h2>
-					<p>If you want to reorder toolbar buttons or remove some of them, check <a href="toolbareditor/index.html">this tool</a>!</p>
+					<h2>What happened?</h2>
+					<p>Essentially, this this sample is <a href="../cke-basic">CKEditor Basicsample</a> but <code>@global-link-font-color</code> has been altered:</p>
+
+<pre>
+@import "../../cke-basic/less/sample.less";
+@global-link-font-color: #4369D0;
+</pre>
+
+				<p>Learn more about <a href="http://lesscss.org/features/#variables-feature-default-variables">lazy-loading in Less</a>.</p>
 				</section>
 			</div>
 		</div>
@@ -71,5 +85,8 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 			</ul>
 		</div>
 	</nav>
+	<script>
+		CKEDITOR.replace( 'editor' );
+	</script>
 </body>
 </html>
