@@ -13,7 +13,7 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 
 	// Default vertical rhythm.
 	p {
-		margin: @global-flow-vgap 0;
+		margin: .5*@global-flow-vgap 0;
 	}
 
 	ul, ol, pre, blockquote, textarea, .cke {
@@ -22,7 +22,6 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 
 	code, kbd {
 		.border-radius( @global-border-radius );
-		border: 1px solid lighten( @global-box-border-color, 3% );
 		padding: 3px 4px;
 	}
 
@@ -37,13 +36,36 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 
 	}
 
-	h1, h2, h3 {
+	h1, h2, h3, h4, h5 {
 		color: #000;
 		font-weight: 100;
 
 		// (#73)
 		code, kbd {
 			font-size: inherit;
+		}
+
+		// Permalinks to headings.
+		a[href^="#"] {
+			fotnt-weight: 100;
+			color: inherit;
+			opacity: .2;
+			border: 0;
+		}
+
+		&:hover {
+			a {
+				opacity: 1;
+			}
+		}
+
+		&:target {
+			.keyframes( ~'targetLinkOpacity, 0%{ opacity: .2 } 100%{ opacity: 1 }' );
+
+			a {
+				.animation( targetLinkOpacity .5s linear alternate );
+				opacity: 1;
+			}
 		}
 	}
 
@@ -72,18 +94,36 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 
 	h1 {
 		.global-font-size( 2.25 );
-		margin: .75*@global-flow-vgap 0;
+		margin: .75*@global-flow-vgap 0 0;
 	}
 
 	h2 {
-		.global-font-size( 1.5 );
-		margin: .6*@global-flow-vgap 0;
+		.global-font-size( 1.7 );
+		margin: .6*@global-flow-vgap 0 0;
 	}
 
 	h3 {
-		.global-font-size( 1 );
+		.global-font-size( 1.5 );
 		font-weight: 500;
-		margin: .45*@global-flow-vgap 0;
+		margin: .5*@global-flow-vgap 0 0;
+	}
+
+	h4 {
+		.global-font-size( 1.2 );
+		font-weight: 500;
+		margin: .5*@global-flow-vgap 0 0;
+	}
+
+	h5 {
+		.global-font-size( 1.1 );
+		font-weight: 500;
+		margin: .5*@global-flow-vgap 0 0;
+	}
+
+	hr {
+		border: 0;
+		border-top: 4px solid @global-box-border-color;
+		margin: @global-flow-vgap 0;
 	}
 
 	input[type="button"] {
@@ -114,12 +154,21 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 
 	pre, code {
 		// (#40, #37)
-		.global-font-size( .813 );
+		.global-font-size( .743 );
 		font-family: @global-font-stack-monospace;
 
 		a {
 			border: 0;
 		}
+	}
+
+	// Mostly for syntax highlighters
+	pre code {
+		padding: .5 * @global-flow-vgap;
+	}
+
+	strong {
+		color: #000;
 	}
 
 	ul, ol {
