@@ -721,24 +721,26 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 				<li>
 					<p><strong>Example:</strong></p>
 
-					<div class="switch-magic">
-						<input type="radio" name="radio" id="radio-1" checked />
-						<input type="radio" name="radio" id="radio-2" />
-						<label for="radio-1">Advanced  </label>
-						<span class="switch">
+					<div class="switch">
+						<input type="radio" name="radio" data-num="1" id="radio-1" checked />
+						<input type="radio" name="radio" data-num="2" id="radio-2" />
+						<label data-for="1" for="radio-1">Advanced</label>
+						<span class="switch-inner">
 							<span class="handler"></span>
 						</span>
-						<label for="radio-2">Basic  </label>
+						<label data-for="2" for="radio-2">Basic</label>
 					</div>
 					
 					<div>
-<pre><code>&lt;div class="switch-magic">
-    &lt;input type="radio" name="radio" id="radio-1" checked />
-    &lt;input type="radio" name="radio" id="radio-2" />
-    &lt;label for="radio-1">Advanced  &lt;/label>
-    &lt;span class="switch">  &lt;/span>
-    &lt;label for="radio-2">Basic  &lt;/label>
-  &lt;/div>
+<pre><code>&lt;div class="switch"&gt;
+	&lt;input type="radio" name="radio" data-num="1" id="radio-1" checked /&gt;
+	&lt;input type="radio" name="radio" data-num="2" id="radio-2" /&gt;
+	&lt;label data-for="1" for="radio-1"&gt;Advanced&lt;/label&gt;
+	&lt;span class="switch-inner"&gt;
+		&lt;span class="handler"&gt;&lt;/span&gt;
+	&lt;/span&gt;
+	&lt;label data-for="2" for="radio-2"&gt;Basic&lt;/label&gt;
+&lt;/div&gt;
 </code></pre>
 					</div>
 				</li>

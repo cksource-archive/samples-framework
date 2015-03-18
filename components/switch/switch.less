@@ -3,20 +3,29 @@ Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
 Licensed under the terms of the MIT license. See LICENSE.md for details.
 */
 
-@switch-font-size: 1em;
 @switch-text-distance: .5em;
 @switch-little-box-side: 1em;
 @switch-padding: .2em;
 @switch-width: 2 * @switch-little-box-side + @switch-padding;
 
-.switch-magic {
-	font-size: @switch-font-size;
-	background-color: #00bfce;
+.switch {
+	cursor: pointer;
+	.global-font-size( .875 );
+	font-weight: bold;
+	background-color: @global-link-font-color;
 	overflow: hidden;
 	display: inline-block;
 	padding: @switch-text-distance;
 	color: #fff;
 	.border-radius( @global-border-radius );
+
+	&:hover {
+		background: @global-link-font-color-hover;
+
+		.switch-inner > .handler {
+			background: @global-link-font-color-hover;
+		}
+	}
 
 	input[ type="radio" ] {
 		display: none;
@@ -24,6 +33,7 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 
 	> * {
 		float: left;
+		cursor: inherit;
 	}
 
 	label {
@@ -33,7 +43,7 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 		line-height: 1em;
 	}
 
-	.switch {
+	.switch-inner {
 		background-color: #fff;
 		height: @switch-little-box-side;
 		width: @switch-width;
@@ -44,25 +54,25 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 			display: block;
 			height: @switch-little-box-side;
 			width: @switch-little-box-side;
-			background: #00d4e2;
+			background: @global-link-font-color;
 			.border-radius( @global-border-radius );
 		}
 	}
 
-	input[ id="radio-2" ]:checked {
-		~ .switch > .handler {
+	input[ data-num="2" ]:checked {
+		~ .switch-inner > .handler {
 			margin-left: @switch-little-box-side + @switch-padding;
 		}
 
-		~ label[ for="radio-1" ] {
+		~ label[ data-for="1" ] {
 			padding-right: @switch-width + @switch-text-distance + @switch-padding * 2;
 			margin-right: -( @switch-width + @switch-padding * 2 );
 		}
 	}
 
-	input[ id="radio-1" ]:checked {
+	input[ data-num="1" ]:checked {
 
-		~ label[ for="radio-2" ] {
+		~ label[ data-for="2" ] {
 			padding-left: @switch-width + @switch-text-distance + @switch-padding * 2;
 			margin-left: -( @switch-width + @switch-padding * 2 );
 		}
