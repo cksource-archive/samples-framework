@@ -8,7 +8,11 @@ main .grid-container,
 header .grid-container,
 .navigation-a > div,
 footer > div {
-	max-width: 960px + 2 * @grid-gutter-width;
+
+	&:not( .freed-width ) {
+		max-width: 960px + 2 * @grid-gutter-width;
+	}
+
 	overflow: hidden;
 }
 
