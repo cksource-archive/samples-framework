@@ -1,0 +1,80 @@
+/*
+Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+Licensed under the terms of the MIT license. See LICENSE.md for details.
+*/
+
+@switch-text-distance: .5em;
+@switch-little-box-side: 1em;
+@switch-padding: .2em;
+@switch-width: 2 * @switch-little-box-side + @switch-padding;
+
+.switch {
+	cursor: pointer;
+	.global-font-size( .875 );
+	font-weight: bold;
+	background-color: @global-link-font-color;
+	overflow: hidden;
+	display: inline-block;
+	padding: @switch-text-distance;
+	color: #fff;
+	.border-radius( @global-border-radius );
+
+	&:hover {
+		background: @global-link-font-color-hover;
+
+		.switch-inner > .handler {
+			background: @global-link-font-color-hover;
+		}
+	}
+
+	input[ type="radio" ] {
+		display: none;
+	}
+
+	> * {
+		float: left;
+		cursor: inherit;
+	}
+
+	label {
+		position: relative;
+		z-index: 2;
+		padding: @switch-padding @switch-text-distance;
+		line-height: 1em;
+	}
+
+	.switch-inner {
+		background-color: #fff;
+		height: @switch-little-box-side;
+		width: @switch-width;
+		padding: @switch-padding;
+		.border-radius( @global-border-radius );
+
+		&> .handler {
+			display: block;
+			height: @switch-little-box-side;
+			width: @switch-little-box-side;
+			background: @global-link-font-color;
+			.border-radius( @global-border-radius );
+		}
+	}
+
+	input[ data-num="2" ]:checked {
+		~ .switch-inner > .handler {
+			margin-left: @switch-little-box-side + @switch-padding;
+		}
+
+		~ label[ data-for="1" ] {
+			padding-right: @switch-width + @switch-text-distance + @switch-padding * 2;
+			margin-right: -( @switch-width + @switch-padding * 2 );
+		}
+	}
+
+	input[ data-num="1" ]:checked {
+
+		~ label[ data-for="2" ] {
+			padding-left: @switch-width + @switch-text-distance + @switch-padding * 2;
+			margin-left: -( @switch-width + @switch-padding * 2 );
+		}
+	}
+}
