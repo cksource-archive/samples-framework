@@ -1,0 +1,50 @@
+@import url('../icon/icon');
+
+.toggler {
+	[data-collapse] {
+		display: inherit;
+	}
+
+	[data-expand] {
+		display: none;
+	}
+
+	&.collapsed {
+		[data-collapse] {
+			display: none;
+		}
+
+		[data-expand] {
+			display: inherit;
+		}
+	}
+}
+
+.toggler-container {
+	overflow: hidden;
+
+	&.collapsed {
+		height: 0;
+	}
+}
+
+.icon-toggler-expanded,
+.icon-toggler-collapsed {
+	&:before, &:after {
+		background-image: data-uri( 'img/icon-toggler.png' );
+	}
+}
+
+.icon-toggler-expanded {
+	&:before,
+	&:after {
+		background-position: top left;
+	}
+}
+
+.icon-toggler-collapsed {
+	&:before,
+	&:after {
+		background-position: bottom left;
+	}
+}
