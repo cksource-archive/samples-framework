@@ -5,57 +5,60 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 
 @button-a-height: 36px;
 
-.button-a,
-a.button-a {
-	.border-radius( @global-border-radius );
-	.global-font-size( .875 );
-	height: @button-a-height;
-	line-height: @button-a-height;
-	padding: 0 1.1em;
-	font-weight: 700;
-	color: darken( @global-font-color, 10% );
-	white-space: nowrap;
-	text-decoration: none;
-	display: inline-block;
-	cursor: pointer;
-	border: 0;
+a, button, input {
+	&.button-a {
+		.border-radius( @global-border-radius );
+		.global-font-size( .875 );
+		height: @button-a-height;
+		line-height: @button-a-height;
+		padding: 0 1.1em;
+		font-weight: 700;
+		color: darken( @global-font-color, 10% );
+		white-space: nowrap;
+		text-decoration: none;
+		display: inline-block;
+		cursor: pointer;
+		border: 0;
 
-	&.icon-pos-left {
-		padding-left: .8em;
+		// Override default background of <button> in UA style sheet.
+		background: transparent;
+
+		&.icon-pos-left {
+			padding-left: .8em;
+		}
+
+		&.icon-pos-right {
+			padding-right: .8em;
+		}
+
+		&.button-a-mobile-collapsed {
+			.global-is-mobile( {
+				.border-radius( 100px );
+				width: @button-a-height;
+				padding: 0;
+				text-indent: -999px;
+				overflow: hidden;
+				position: relative;
+				text-align: center;
+
+				&:before {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					margin: -9px 0 0 -9px;
+				}
+			} );
+		}
 	}
 
-	&.icon-pos-right {
-		padding-right: .8em;
-	}
-
-	&.button-a-mobile-collapsed {
-		.global-is-mobile( {
-			.border-radius( 100px );
-			width: @button-a-height;
-			padding: 0;
-			text-indent: -999px;
-			overflow: hidden;
-			position: relative;
-			text-align: center;
-
-			&:before {
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				margin: -9px 0 0 -9px;
-			}
-		} );
-	}
-}
-
-// It's outside of the namespace above to allow inheritance with :extend().
-.button-a-background,
-a.button-a-background {
-	color: #fff;
-	background: @global-link-font-color;
-
-	&:hover {
+	// It's outside of the namespace above to allow inheritance with :extend().
+	&.button-a-background {
 		color: #fff;
-		background: @global-link-font-color-hover;
+		background: @global-link-font-color;
+
+		&:hover {
+			color: #fff;
+			background: @global-link-font-color-hover;
+		}
 	}
 }
