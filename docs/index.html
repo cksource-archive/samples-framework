@@ -457,7 +457,10 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 			<h4 id="toggler">toggler <a href="#toggler" class="content-heading-anchor" title="Permalink to this headline">&para;</a></h4>
 
 			<p>Box visibility toggler.</p>
-			<p><strong>Please note:</strong> You should include javascript file: <pre>/components/toggler/js/toggler.js</pre> to make this component works.</p>
+			<p><strong>Please note:</strong> You should include javascript file to make this component works. Script should be embedded right before the closing body tag.</p>
+<pre><code>	...
+	&lt;script src="/components/toggler/js/toggler.js"&gt;&lt;/script&gt;
+&lt;/body></code></pre>
 
 			<ul>
 				<li>
@@ -500,18 +503,18 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<strong>Example:</strong>
 
 <pre><code>&lt;div class="grid-container"&gt;
-	&lt;div data-for="collapseexample" class="toggler expanded"&gt;
+	&lt;div data-for="collapseexample" class="toggler expanded icon-pos-right icon-toggler-expanded button-a"&gt;
 		&lt;label data-collapse&gt;Collapse this box&lt;/label&gt;
 		&lt;label data-expand&gt;Expand this box&lt;/label&gt;
 	&lt;/div&gt;
 	&lt;div id="collapseexample" class="toggler-container grid-width-100"&gt;
 		&lt;p&gt;Some content.&lt;/p&gt;
 	&lt;/div&gt;
-&lt;/div&gt;
+&lt;/div>
 </code></pre>
 
 					<div class="grid-container">
-						<div data-for="collapseexample" class="toggler expanded">
+						<div data-for="collapseexample" class="toggler expanded icon-pos-right icon-toggler-expanded button-a">
 							<label data-collapse>Collapse this box</label>
 							<label data-expand>Expand this box</label>
 						</div>
