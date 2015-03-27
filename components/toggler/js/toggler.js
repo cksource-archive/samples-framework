@@ -7,29 +7,29 @@
 
 ( function() {
 	// All .tree-a elements in DOM.
-	var expanders = sf.getByClass( 'toggler' );
+	var expanders = SF.getByClass( 'toggler' );
 
 	var i = expanders.length;
 	while ( i-- ) {
 		var expander = expanders[ i ];
 
-		sf.attachListener( expander, 'click', function() {
-			var containsIcon = sf.classList.contains( this, 'icon-toggler-expanded' ) || sf.classList.contains( this, 'icon-toggler-collapsed' ),
+		SF.attachListener( expander, 'click', function() {
+			var containsIcon = SF.classList.contains( this, 'icon-toggler-expanded' ) || SF.classList.contains( this, 'icon-toggler-collapsed' ),
 				related = document.getElementById( this.getAttribute( 'data-for' ) );
 
-			sf.classList.toggle( this, 'collapsed' );
+			SF.classList.toggle( this, 'collapsed' );
 
-			if ( sf.classList.contains( this, 'collapsed' ) ) {
-				sf.classList.add( related, 'collapsed' );
+			if ( SF.classList.contains( this, 'collapsed' ) ) {
+				SF.classList.add( related, 'collapsed' );
 				if ( containsIcon ) {
-					sf.classList.remove( this, 'icon-toggler-expanded' );
-					sf.classList.add( this, 'icon-toggler-collapsed' );
+					SF.classList.remove( this, 'icon-toggler-expanded' );
+					SF.classList.add( this, 'icon-toggler-collapsed' );
 				}
 			} else {
-				sf.classList.remove( related, 'collapsed' );
+				SF.classList.remove( related, 'collapsed' );
 				if ( containsIcon ) {
-					sf.classList.remove( this, 'icon-toggler-collapsed' );
-					sf.classList.add( this, 'icon-toggler-expanded' );
+					SF.classList.remove( this, 'icon-toggler-collapsed' );
+					SF.classList.add( this, 'icon-toggler-expanded' );
 				}
 			}
 		} );
