@@ -7,7 +7,7 @@
 
 ( function() {
 	// All .tree-a elements in DOM.
-	var expanders = document.getElementsByClassName( 'toggler' );
+	var expanders = sf.getByClass( 'toggler' );
 
 	var i = expanders.length;
 	while ( i-- ) {
@@ -15,7 +15,7 @@
 
 		sf.attachListener( expander, 'click', function() {
 			var containsIcon = sf.classList.contains( this, 'icon-toggler-expanded' ) || sf.classList.contains( this, 'icon-toggler-collapsed' ),
-				related = document.getElementById( this.dataset.for );
+				related = document.getElementById( this.getAttribute( 'data-for' ) );
 
 			sf.classList.toggle( this, 'collapsed' );
 

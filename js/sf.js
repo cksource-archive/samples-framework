@@ -11,6 +11,54 @@
 		}
 	};
 
+	sf.accept = function( node, visitor ) {
+		var children;
+
+		// Handling node as a node and array
+		if ( node.children ) {
+			children = node.children;
+
+			visitor( node );
+		} else if ( typeof node.length === 'number' ) {
+			children = node;
+		}
+
+		var i = children ? ( children.length || 0 ) : 0;
+		while( i-- ) {
+			sf.accept( children[ i ], visitor );
+		}
+	};
+
+	sf.getByClass = ( function(  ) {
+		var getByClass = document.getElementsByClassName;
+		if ( typeof getByClass === 'function' ) {
+			return function( root, className ) {
+				if (typeof root === 'string') {
+					className = root;
+					root = document;
+				}
+
+				return getByClass.call( root, className );
+			};
+		}
+
+		return function( root, className ) {
+			if (typeof root === 'string') {
+				className = root;
+				root = document;
+			}
+			var results = [];
+
+			sf.accept( root, function( elem ) {
+				if ( sf.classList.contains( elem, className ) ) {
+					results.push( elem );
+				}
+			} );
+
+			return results;
+		};
+	}() );
+
 	sf.classList = {};
 
 	sf.classList.add = function( elem, className ) {

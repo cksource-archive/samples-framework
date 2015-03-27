@@ -7,7 +7,7 @@
 
 ( function() {
 	// All .tree-a elements in DOM.
-	var trees = document.getElementsByClassName( 'tree-a' );
+	var trees = sf.getByClass( 'tree-a' );
 
 	for ( var i = trees.length; i--; ) {
 		var tree = trees[ i ];
