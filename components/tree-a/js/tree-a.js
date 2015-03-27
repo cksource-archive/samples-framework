@@ -7,15 +7,17 @@
 
 ( function() {
 	// All .tree-a elements in DOM.
-	var trees = CKEDITOR.document.find( '.tree-a' );
+	var trees = SF.getByClass( 'tree-a' );
 
-	for ( var i = trees.count(); i--; ) {
-		trees.getItem( i ).on( 'click', function( evt ) {
-			var target = evt.data.getTarget();
+	for ( var i = trees.length; i--; ) {
+		var tree = trees[ i ];
+
+		SF.attachListener( tree, 'click', function( evt ) {
+			var target = evt.target || evt.srcElement;
 
 			// Collapse or expand item groups.
-			if ( target.is( 'h2' ) && !target.hasClass( 'tree-a-no-sub' ) ) {
-				target[ target.hasClass( 'tree-a-active' ) ? 'removeClass' : 'addClass' ]( 'tree-a-active' );
+			if ( target.nodeName === 'H2' && !SF.classList.contains( target, 'tree-a-no-sub' ) ) {
+				SF.classList.toggle( target, 'tree-a-active' );
 			}
 		} );
 	}
