@@ -1,6 +1,6 @@
 {
 	"name": "cksource-samples-framework",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "Less framework for CKSource samples.",
 	"dependencies": {
 		"grunt": "~0.4.5",
@@ -15,8 +15,7 @@
 	"author": "CKSource (http://cksource.com/)",
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "http://github.com/cksource/samples-framework.git"
 	},
-	"devDependencies": {
-	}
+	"license": "MIT"
 }
