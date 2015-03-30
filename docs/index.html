@@ -65,6 +65,10 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 				<li><a href="#basicsample">basicsample</a>
 				<li><a href="#basicsample/adjoined">basicsample/adjoined</a></li>
 			</ul>
+			<h2>JavaScript SF</h2>
+			<ul>
+				<li><a href="#static%20methods">static methods</a></li>
+			</ul>
 
 			<h1>Samples</h1>
 			<h2 class="tree-a-no-sub"><a href="../samples/sdk">SDK layout</a></h2>
@@ -1128,6 +1132,37 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					</ul>
 				</li>
 			</ul>
+
+			<hr>
+
+			<h3 id="JavaScript%20SF">JavaScript SF</h3>
+
+			<p>Framework provides an abstract level for main functionalities which are not supported in older browsers including IE8. It exposes global object <code>SF</code> which includes static functions for manipulating.</p>
+			<p>To make this object available, you have to include following script right before the closing body tag.</p>
+<pre><code>	...
+	&lt;script src="/js/sf.js"&gt;&lt;/script&gt;
+&lt;/body></code></pre>
+
+			<h4>Static methods</h4>
+			<ul>
+				<li>
+					<p>SF.attachListener</p>
+
+					<p><strong>Arguments:</strong></p>
+					<ul>
+						<li>
+							<p>element: <code>HTMLElement</code></p>
+						</li>
+						<li>
+							<p>evtName: <code>String</code></p>
+						</li>
+						<li>
+							<p>callback: <code>Function</code></p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
 		</section>
 	</main>
 	<footer class="footer-a grid-container">
