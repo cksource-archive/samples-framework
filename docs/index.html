@@ -226,16 +226,16 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 									</p>
 
 <pre><code>.foo {
-  .global-font-size( 0.875 );
+	.global-font-size( 0.875 );
 }
 </code></pre>
 									<p>CSS (note that <code>14/16 = 0.875</code>):</p>
 
 <pre><code>.foo {
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 30.24px;
-  line-height: 1.89rem;
+	font-size: 14px;
+	font-size: 0.875rem;
+	line-height: 30.24px;
+	line-height: 1.89rem;
 }
 </code></pre>
 								</li>
@@ -252,17 +252,17 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 									<p>Less:</p>
 
 <pre><code>@font-face {
-  .global-font-face( "Roboto", url( "fonts/%s" ), "Roboto-Thin-webfont", 100 );
+	.global-font-face( "Roboto", url( "fonts/%s" ), "Roboto-Thin-webfont", 100 );
 }
 </code></pre>
 									<p>CSS:</p>
 
 <pre><code>@font-face {
-  font-family: "Roboto";
-  src: url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.eot");
-  src: url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.eot?#iefix") format("embedded-opentype"), url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.woff") format("woff"), url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.ttf") format("truetype"), url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.svg#Roboto") format("svg");
-  font-weight: 100;
-  font-style: normal;
+	font-family: "Roboto";
+	src: url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.eot");
+	src: url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.eot?#iefix") format("embedded-opentype"), url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.woff") format("woff"), url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.ttf") format("truetype"), url("../../../components/font-roboto/fonts/Roboto-Thin-webfont.svg#Roboto") format("svg");
+	font-weight: 100;
+	font-style: normal;
 }
 </code></pre>
 								</li>
@@ -291,17 +291,17 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 									<p>Less:</p>
 
 <pre><code>.global-is-mobile( {
-  .foo {
-    color: red;
-  }
+	.foo {
+		color: red;
+	}
 } );
 </code></pre>
 									<p>CSS:</p>
 
 <pre><code>@media ( max-width: @global-is-mobile-threshold ) {
-  .foo {
-    color: red;
-  }
+	.foo {
+		color: red;
+	}
 }
 </code></pre>
 								</li>
@@ -540,11 +540,11 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<strong>Example:</strong>
 
 <pre><code>&lt;div class=&quot;content&quot;&gt;
-  &lt;h1 id=&quot;first-header&quot;&gt;This is a first-level header &lt;a href=&quot;#first-header&quot; class=&quot;content-heading-anchor&quot; title=&quot;Permalink to this headline&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-  &lt;p&gt;I'm styled with default styleset.&lt;/p&gt;
+	&lt;h1 id=&quot;first-header&quot;&gt;This is a first-level header &lt;a href=&quot;#first-header&quot; class=&quot;content-heading-anchor&quot; title=&quot;Permalink to this headline&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+	&lt;p&gt;I'm styled with default styleset.&lt;/p&gt;
 
-  &lt;h2 id=&quot;another-header&quot;&gt;This is another header &lt;a href=&quot;#another-header&quot; class=&quot;content-heading-anchor&quot; title=&quot;Permalink to this headline&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-  &lt;p&gt;I'm also styled with default styleset.&lt;/p&gt;
+	&lt;h2 id=&quot;another-header&quot;&gt;This is another header &lt;a href=&quot;#another-header&quot; class=&quot;content-heading-anchor&quot; title=&quot;Permalink to this headline&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+	&lt;p&gt;I'm also styled with default styleset.&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
 				</li>
@@ -559,7 +559,7 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<strong>Example:</strong>
 
 <pre><code>&lt;footer class=&quot;footer-a&quot;&gt;
-  I'm a footer!
+	I'm a footer!
 &lt;/footer&gt;
 </code></pre>
 				</li>
@@ -593,19 +593,20 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<p><strong>Example:</strong></p>
 
 <pre><code>&lt;div class=&quot;grid-container&quot;&gt;
-    &lt;div class=&quot;grid-width-50&quot;&gt;
-      Column 1
-    &lt;/div&gt;
-    &lt;div class=&quot;grid-width-50&quot;&gt;
-      Column 2
-      &lt;div class=&quot;grid-container [grid-container-nested]&quot;&gt;
-        &lt;div class=&quot;grid-width-30&quot;&gt;
-          Column 2-1
-        &lt;/div&gt;
-        &lt;div class=&quot;grid-width-70&quot;&gt;
-          Column 2-2
-        &lt;/div&gt;
-    &lt;/div&gt;
+	&lt;div class=&quot;grid-width-50&quot;&gt;
+		Column 1
+	&lt;/div&gt;
+	&lt;div class=&quot;grid-width-50&quot;&gt;
+		Column 2
+		&lt;div class=&quot;grid-container [grid-container-nested]&quot;&gt;
+			&lt;div class=&quot;grid-width-30&quot;&gt;
+				Column 2-1
+			&lt;/div&gt;
+			&lt;div class=&quot;grid-width-70&quot;&gt;
+				Column 2-2
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 				</li>
@@ -645,14 +646,14 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<p><strong>Example:</strong></p>
 
 <pre><code>&lt;header class=&quot;header-a&quot;&gt;
-  &lt;div class=&quot;grid-container&quot;&gt;
-    &lt;h1 class=&quot;header-a-logo grid-width-30&quot;&gt;
-      &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;logo.png&quot; alt=&quot;Logo&quot;&gt;&lt;/a&gt;
-    &lt;/h1&gt;
-    &lt;nav class=&quot;...&quot;&gt;
-      ...
-    &lt;/nav&gt;
-  &lt;/div&gt;
+	&lt;div class=&quot;grid-container&quot;&gt;
+		&lt;h1 class=&quot;header-a-logo grid-width-30&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;logo.png&quot; alt=&quot;Logo&quot;&gt;&lt;/a&gt;
+		&lt;/h1&gt;
+		&lt;nav class=&quot;...&quot;&gt;
+			...
+		&lt;/nav&gt;
+	&lt;/div&gt;
 &lt;/header&gt;
 </code></pre>
 				</li>
@@ -756,16 +757,16 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<p><strong>Example:</strong></p>
 
 <pre><code>&lt;nav class=&quot;navigation-a&quot;&gt;
-  &lt;div class=&quot;grid-container&quot;&gt;
-    &lt;ul class=&quot;navigation-a-left grid-width-70&quot;&gt;
-      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Project Homepage&lt;/a&gt;&lt;/li&gt;
-      &lt;li class=&quot;global-is-mobile-hidden&quot;&gt;...&lt;/li&gt;
-      ...
-    &lt;/ul&gt;
-    &lt;ul class=&quot;navigation-a-right grid-width-30&quot;&gt;
-      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
+	&lt;div class=&quot;grid-container&quot;&gt;
+		&lt;ul class=&quot;navigation-a-left grid-width-70&quot;&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Project Homepage&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;global-is-mobile-hidden&quot;&gt;...&lt;/li&gt;
+			...
+		&lt;/ul&gt;
+		&lt;ul class=&quot;navigation-a-right grid-width-30&quot;&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
 &lt;/nav&gt;
 </code></pre>
 				</li>
@@ -791,11 +792,11 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<p><strong>Example:</strong></p>
 
 <pre><code>&lt;nav class=&quot;navigation-b&quot;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button-a button-a-background&quot;&gt;Foo&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button-a&quot;&gt;Bar&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button-a&quot;&gt;Bam&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button-a button-a-background&quot;&gt;Foo&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button-a&quot;&gt;Bar&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;button-a&quot;&gt;Bam&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
 &lt;/nav&gt;
 </code></pre>
 				</li>
@@ -931,17 +932,17 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 						</div>
 						<div class="grid-width-70">
 <pre><code>&lt;nav class=&quot;tree-a tree-a-standalone&quot;&gt;
-  &lt;h1&gt;Sample tree&lt;/h1&gt;
+	&lt;h1&gt;Sample tree&lt;/h1&gt;
 
-  &lt;h2 class=&quot;tree-a-no-sub tree-a-active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Item #1 - active&lt;/a&gt;&lt;/h2&gt;
-  &lt;h2 class=&quot;tree-a-no-sub&quot;&gt;&lt;a href=&quot;#&quot;&gt;Item #2&lt;/a&gt;&lt;/h2&gt;
+	&lt;h2 class=&quot;tree-a-no-sub tree-a-active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Item #1 - active&lt;/a&gt;&lt;/h2&gt;
+	&lt;h2 class=&quot;tree-a-no-sub&quot;&gt;&lt;a href=&quot;#&quot;&gt;Item #2&lt;/a&gt;&lt;/h2&gt;
 
-  &lt;h2 class=&quot;tree-a-active&quot;&gt;Item #3&lt;/h2&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sub-item #1&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&quot;tree-a-active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sub-item #2&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sub-item #3&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
+	&lt;h2 class=&quot;tree-a-active&quot;&gt;Item #3&lt;/h2&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sub-item #1&lt;/a&gt;&lt;/li&gt;
+		&lt;li class=&quot;tree-a-active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sub-item #2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sub-item #3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
 &lt;/nav&gt;
 </code></pre>
 						</div>
@@ -981,11 +982,11 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<p><strong>Example:</strong></p>
 
 <pre><code>&lt;div class=&quot;tip-a&quot;&gt;
-  This is some important information.
+	This is some important information.
 &lt;/div&gt;
 
 &lt;div class=&quot;tip-a tip-a-alert&quot;&gt;
-  This is some critical information.
+	This is some critical information.
 &lt;/div&gt;
 </code></pre>
 
@@ -1039,9 +1040,9 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 									<strong>Example:</strong>
 
 <pre><code>&lt;h1&gt;A header
-  &lt;span class=&quot;sdk-documentation&quot;&gt;
-    &lt;a href=&quot;#&quot; class=&quot;button-a button-a-background button-a-icon-left icon-docs-a&quot;&gt;Documentation&lt;/a&gt;
-  &lt;/span&gt;
+	&lt;span class=&quot;sdk-documentation&quot;&gt;
+		&lt;a href=&quot;#&quot; class=&quot;button-a button-a-background button-a-icon-left icon-docs-a&quot;&gt;Documentation&lt;/a&gt;
+	&lt;/span&gt;
 &lt;/h1&gt;
 </code></pre>
 								</li>
@@ -1103,23 +1104,23 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 									<p><strong>Example:</strong></p>
 
 <pre><code>&lt;header class=&quot;header-a&quot;&gt;
-  &lt;div class=&quot;grid-container&quot;&gt;
-    ...
-  &lt;/div&gt;
-  &lt;div class=&quot;adjoined-top&quot;&gt;
-    &lt;div class=&quot;grid-container&quot;&gt;
-      &lt;div class=&quot;content grid-width-100&quot;&gt;
-        (description part)
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;adjoined-bottom&quot;&gt;
-    &lt;div class=&quot;grid-container&quot;&gt;
-      &lt;div class=&quot;grid-width-100&quot;&gt;
-        (editor part)
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+	&lt;div class=&quot;grid-container&quot;&gt;
+		...
+	&lt;/div&gt;
+	&lt;div class=&quot;adjoined-top&quot;&gt;
+		&lt;div class=&quot;grid-container&quot;&gt;
+			&lt;div class=&quot;content grid-width-100&quot;&gt;
+				(description part)
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;adjoined-bottom&quot;&gt;
+		&lt;div class=&quot;grid-container&quot;&gt;
+			&lt;div class=&quot;grid-width-100&quot;&gt;
+				(editor part)
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
 &lt;/header&gt;
 </code></pre>
 								</li>
