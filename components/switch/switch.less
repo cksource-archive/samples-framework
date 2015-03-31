@@ -40,7 +40,6 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 		position: relative;
 		z-index: 2;
 		padding: @switch-padding @switch-text-distance;
-		line-height: 1em;
 	}
 
 	.switch-inner {
@@ -51,11 +50,26 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 		.border-radius( @global-border-radius );
 
 		&> .handler {
+			overflow: hidden;
+			position: relative;
 			display: block;
 			height: @switch-little-box-side;
 			width: @switch-little-box-side;
 			background: @global-link-font-color;
 			.border-radius( @global-border-radius );
+
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: @switch-little-box-side / 6.5;
+				left: 0;
+				background-color: @global-link-font-color;;
+				.border-bottom-left-radius( @global-border-radius );
+				.border-bottom-right-radius( @global-border-radius );
+			}
 		}
 	}
 
