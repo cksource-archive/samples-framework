@@ -6,7 +6,7 @@
 'use strict';
 
 ( function() {
-	window.SF = {};
+	var SF = window.SF = {};
 
 	SF.attachListener = function( elem, evtName, callback ) {
 		if ( elem.addEventListener ) {
@@ -24,7 +24,7 @@
 		var indexOf = Array.prototype.indexOf;
 
 		if ( indexOf === 'function' ) {
-			return function() {
+			return function( arr, elem ) {
 				return indexOf.call( arr, elem );
 			};
 		} else {
