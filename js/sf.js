@@ -5,8 +5,8 @@
 
 'use strict';
 
-( function() {
-	var SF = window.SF = {};
+var SF = ( function() {
+	var SF = {};
 
 	SF.attachListener = function( elem, evtName, callback ) {
 		if ( elem.addEventListener ) {
@@ -65,7 +65,7 @@
 		var getByClass = document.getElementsByClassName;
 		if ( typeof getByClass === 'function' ) {
 			return function( root, className ) {
-				if (typeof root === 'string') {
+				if ( typeof root === 'string' ) {
 					className = root;
 					root = document;
 				}
@@ -75,7 +75,7 @@
 		}
 
 		return function( root, className ) {
-			if (typeof root === 'string') {
+			if ( typeof root === 'string' ) {
 				className = root;
 				root = document.getElementsByTagName( 'html' )[ 0 ];
 			}
@@ -137,4 +137,6 @@
 
 		return attr;
 	}
+
+	return SF;
 }() );
