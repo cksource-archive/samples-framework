@@ -1,9 +1,6 @@
 /**
  * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * Licensed under the terms of the MIT license. See LICENSE.md for more information.
- * Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md
- *
  */
 
 'use strict';
@@ -11,8 +8,8 @@
 module.exports = function( grunt ) {
 	var cssBanner = [
 		'/**',
-		' * Copyright (c) 2003-' + new Date().getFullYear() + ', CKSource - Frederico Knabben. All rights reserved.',
-		' * For licensing, see LICENSE.html or http://cksource.com/ckeditor/license',
+		' * @license Copyright (c) 2003-' + new Date().getFullYear() + ', CKSource - Frederico Knabben. All rights reserved.',
+		' * Licensed under the terms of the MIT license. See LICENSE.md for more information.',
 		' */'
 	].join( '\n' );
 
