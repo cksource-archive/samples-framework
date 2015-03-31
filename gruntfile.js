@@ -1,14 +1,21 @@
 /**
  * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * Licensed under the terms of the MIT license. See LICENSE.md for more information.
- Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
- For licensing, see LICENSE.md
+ * Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md
  *
  */
 
 'use strict';
 
 module.exports = function( grunt ) {
+	var cssBanner = [
+		'/**',
+		' * Copyright (c) 2003-' + new Date().getFullYear() + ', CKSource - Frederico Knabben. All rights reserved.',
+		' * For licensing, see LICENSE.html or http://cksource.com/ckeditor/license',
+		' */'
+	].join( '\n' );
+
 	require( 'load-grunt-tasks' )( grunt );
 
 	grunt.registerTask( 'default', [ 'less' ] );
@@ -31,6 +38,7 @@ module.exports = function( grunt ) {
 					paths: [ 'samples/' ],
 					relativeUrls: true,
 
+					banner: cssBanner,
 					sourceMap: true,
 					sourceMapFileInline: true,
 					sourceMapRootpath: '../../../'
@@ -47,6 +55,7 @@ module.exports = function( grunt ) {
 					paths: [ 'docs/' ],
 					relativeUrls: true,
 
+					banner: cssBanner,
 					sourceMap: true,
 					sourceMapFileInline: true,
 					sourceMapRootpath: '../../'
