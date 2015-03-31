@@ -1,60 +1,54 @@
 // Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
 // Licensed under the terms of the MIT license. See LICENSE.md for details.
 
-@switch-text-distance: .5em;
-@switch-little-box-side: 1em;
-@switch-padding: .2em;
-@switch-width: 2 * @switch-little-box-side + @switch-padding;
+@switch-vpadding: .75em;
+@switch-hspacing: .25em;
+@switch-text-padding: 1em;
+@switch-handler-side: 1.5em;
+@switch-width: 2.5 * @switch-handler-side;
+@switch-border-radius: 1.5 * @global-border-radius;
 
 .switch {
-	cursor: pointer;
 	.global-font-size( .875 );
 	font-weight: bold;
 	background-color: @global-link-font-color;
 	overflow: hidden;
 	display: inline-block;
-	padding: @switch-text-distance;
+	padding: @switch-vpadding @switch-hspacing;
 	color: #fff;
 	.border-radius( @global-border-radius );
-
-	&:hover {
-		background: @global-link-font-color-hover;
-
-		.switch-inner > .handler {
-			background: @global-link-font-color-hover;
-		}
-	}
 
 	input[ type="radio" ] {
 		display: none;
 	}
 
-	> * {
-		float: left;
-		cursor: inherit;
-	}
-
 	label {
-		position: relative;
-		z-index: 2;
-		padding: @switch-padding @switch-text-distance;
+		float: left;
+		cursor: pointer;
+		padding: 0 @switch-text-padding;
+
+		&:hover {
+			text-decoration: underline
+		}
 	}
 
 	.switch-inner {
-		background-color: #fff;
-		height: @switch-little-box-side;
+		float: left;
+		background-color: #FFF;
+		height: @switch-handler-side;
 		width: @switch-width;
-		padding: @switch-padding;
-		.border-radius( @global-border-radius );
+		padding: 2px;
+		margin: 0 @switch-hspacing;
+		.border-radius( @switch-border-radius );
 
 		&> .handler {
 			overflow: hidden;
 			position: relative;
 			display: block;
-			height: @switch-little-box-side;
-			width: @switch-little-box-side;
-			background: @global-link-font-color;
-			.border-radius( @global-border-radius );
+			height: @switch-handler-side;
+			width: @switch-handler-side;
+			background: darken( @global-link-font-color, 3% );
+			.border-radius( @switch-border-radius );
 
 			&:before {
 				content: '';
@@ -62,31 +56,16 @@
 				position: absolute;
 				top: 0;
 				right: 0;
-				bottom: @switch-little-box-side / 6.5;
+				bottom: 2px;
 				left: 0;
-				background-color: @global-link-font-color;;
-				.border-bottom-left-radius( @global-border-radius );
-				.border-bottom-right-radius( @global-border-radius );
+				background-color: @global-link-font-color;
+				.border-bottom-left-radius( @switch-border-radius );
+				.border-bottom-right-radius( @switch-border-radius );
 			}
 		}
 	}
 
-	input[ data-num="2" ]:checked {
-		~ .switch-inner > .handler {
-			margin-left: @switch-little-box-side + @switch-padding;
-		}
-
-		~ label[ data-for="1" ] {
-			padding-right: @switch-width + @switch-text-distance + @switch-padding * 2;
-			margin-right: -( @switch-width + @switch-padding * 2 );
-		}
-	}
-
-	input[ data-num="1" ]:checked {
-
-		~ label[ data-for="2" ] {
-			padding-left: @switch-width + @switch-text-distance + @switch-padding * 2;
-			margin-left: -( @switch-width + @switch-padding * 2 );
-		}
+	input[ data-num="2" ]:checked ~ .switch-inner > .handler {
+		margin-left: auto;
 	}
 }
