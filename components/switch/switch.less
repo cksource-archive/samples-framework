@@ -23,6 +23,8 @@
 	}
 
 	label {
+		position: relative;
+		z-index: 2;
 		float: left;
 		cursor: pointer;
 		padding: 0 @switch-text-padding;
@@ -65,7 +67,23 @@
 		}
 	}
 
-	input[ data-num="2" ]:checked ~ .switch-inner > .handler {
-		margin-left: auto;
+	input[ data-num="2" ]:checked {
+		// Align the handler to the right.
+		~ .switch-inner > .handler {
+			margin-left: auto;
+		}
+
+		// Stretch the left label so it covers the area of the handler.
+		// This makes the handler clickable.
+		// Note: switch-inner's padding is missing (because it's set in px).
+		~ label[ data-for="1" ] {
+			padding-right: @switch-width + @switch-text-padding + @switch-hspacing;
+			margin-right: -( @switch-width + @switch-hspacing );
+		}
+	}
+
+	input[ data-num="1" ]:checked ~ label[ data-for="2" ] {
+		padding-left: @switch-width + @switch-text-padding + @switch-hspacing;
+		margin-left: -( @switch-width + @switch-hspacing );
 	}
 }
