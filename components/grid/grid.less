@@ -63,14 +63,24 @@
 }
 
 .grid-container-nested {
-	.global-is-desktop( {
+	*[class*="grid-width"] {
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+
+	.global-is-mobile( {
 		*[class*="grid-width"] {
 			&:first-child {
-				padding-left: 0;
+				padding-left: @grid-gutter-width;
 			}
 
 			&:last-child {
-				padding-right: 0;
+				padding-right: @grid-gutter-width;
 			}
 		}
 	} );
