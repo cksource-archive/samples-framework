@@ -3,10 +3,41 @@
 
 @switch-vpadding: .75em;
 @switch-hspacing: .25em;
-@switch-text-padding: 0.75em;
+@switch-text-padding: .75em;
 @switch-handler-side: 1.5em;
 @switch-width: 2.5 * @switch-handler-side;
 @switch-border-radius: 1.5 * @global-border-radius;
+
+.ie8 .switch {
+
+	> * {
+		vertical-align: middle;
+	}
+
+	input[ type="radio" ] {
+		margin: 0 @switch-hspacing;
+		display: inline-block;
+	}
+
+	label {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+
+		&[data-for="1"] {
+			float: left;
+		}
+
+		&[data-for="2"] {
+			float: right;
+		}
+	}
+
+	.switch-inner {
+		display: none;
+	}
+}
 
 .switch {
 	.global-font-size( .875 );
@@ -17,6 +48,7 @@
 	padding: @switch-vpadding @switch-hspacing;
 	color: #fff;
 	.border-radius( @global-border-radius );
+	position: relative;
 
 	input[ type="radio" ] {
 		display: none;
