@@ -5,78 +5,80 @@
 
 @button-a-soft-background-color: #e7e7e7;
 
-a, button, input {
-	&.button-a {
-		.border-radius( @global-border-radius );
-		.global-font-size( .875 );
-		height: @button-a-height;
-		line-height: @button-a-height;
-		padding: 0 1.1em;
-		font-weight: 700;
-		color: darken( @global-font-color, 10% );
-		white-space: nowrap;
-		text-decoration: none;
-		display: inline-block;
-		cursor: pointer;
-		border: 0;
-
-		// Override default background of <button> in UA style sheet.
-		background: transparent;
-
-		&.icon-pos-left {
-			padding-left: .8em;
-		}
-
-		&.icon-pos-right {
-			padding-right: .8em;
-		}
-
-		&.button-a-mobile-collapsed {
-			.global-is-mobile( {
-				.border-radius( 100px );
-				width: @button-a-height;
-				padding: 0;
-				text-indent: -999px;
-				overflow: hidden;
-				position: relative;
-				text-align: center;
-
-				&:before {
-					position: absolute;
-					left: 50%;
-					top: 50%;
-					margin: -9px 0 0 -9px;
-				}
-			} );
-		}
-
-		&:active,
-		&:hover {
-			color: #fff;
-			background: @global-link-font-color-hover;
-		}
-	}
-
-	// Those belowe are outside of the namespace above to allow inheritance with :extend().
-
-	&.button-a-soft {
-		background: @button-a-soft-background-color;
-
-		&:active,
-		&:hover {
+body {
+	a, button, input {
+		&.button-a {
+			.border-radius( @global-border-radius );
+			.global-font-size( .875 );
+			height: @button-a-height;
+			line-height: @button-a-height;
+			padding: 0 1.1em;
+			font-weight: 700;
 			color: darken( @global-font-color, 10% );
-			background: darken( @button-a-soft-background-color, 10% );
+			white-space: nowrap;
+			text-decoration: none;
+			display: inline-block;
+			cursor: pointer;
+			border: 0;
+
+			// Override default background of <button> in UA style sheet.
+			background: transparent;
+
+			&.icon-pos-left {
+				padding-left: .8em;
+			}
+
+			&.icon-pos-right {
+				padding-right: .8em;
+			}
+
+			&.button-a-mobile-collapsed {
+				.global-is-mobile( {
+					.border-radius( 100px );
+					width: @button-a-height;
+					padding: 0;
+					text-indent: -999px;
+					overflow: hidden;
+					position: relative;
+					text-align: center;
+
+					&:before {
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						margin: -9px 0 0 -9px;
+					}
+				} );
+			}
+
+			&:active,
+			&:hover {
+				color: #fff;
+				background: @global-link-font-color-hover;
+			}
 		}
-	}
 
-	&.button-a-background {
-		color: #fff;
-		background: @global-link-font-color;
+		// Those below are outside of the namespace above to allow inheritance with :extend().
 
-		&:active,
-		&:hover {
+		&.button-a-soft {
+			background: @button-a-soft-background-color;
+
+			&:active,
+			&:hover {
+				color: darken( @global-font-color, 10% );
+				background: darken( @button-a-soft-background-color, 10% );
+			}
+		}
+
+		&.button-a-background {
 			color: #fff;
-			background: @global-link-font-color-hover;
+			background: @global-link-font-color;
+
+			&:active,
+			&:hover {
+				color: #fff;
+				background: @global-link-font-color-hover;
+			}
 		}
 	}
 }
