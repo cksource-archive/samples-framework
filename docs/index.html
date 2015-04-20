@@ -55,6 +55,7 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 				<li><a href="#grid">grid</a></li>
 				<li><a href="#header-a">header-a</a></li>
 				<li><a href="#icon">icon</a></li>
+				<li><a href="#modal">modal</a></li>
 				<li><a href="#navigation-a">navigation-a</a></li>
 				<li><a href="#navigation-b">navigation-b</a></li>
 				<li><a href="#switcher">switcher</a></li>
@@ -728,6 +729,16 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 				</li>
 			</ul>
 
+			<h4 id="modal">modal <a href="#modal" class="content-heading-anchor" title="Permalink to this headline">&para;</a></h4>
+			<p>A modal window to display content on demand.</p>
+
+			<ul>
+				<li>
+					<p><strong>Example:</strong></p>
+					<p><a href="#" class="button-a button-a-background" id="modal-example">Show the modal!</a></p>
+				</li>
+			</ul>
+
 			<h4 id="navigation-a">navigation-a <a href="#navigation-a" class="content-heading-anchor" title="Permalink to this headline">&para;</a></h4>
 			<p>Absolutely positioned horizontal bar, usually with useful links to project-related resources i.e. GitHub, bug tracker, blog, etc.</p>
 
@@ -1183,5 +1194,17 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 	<script src="../js/sf.js"></script>
 	<script src="../components/tree-a/js/tree-a.js"></script>
 	<script src="../components/toggler/js/toggler.js"></script>
+	<script src="../components/modal/js/picoModal-2.1.0.min.js"></script>
+	<script src="../components/modal/js/modal.js"></script>
+
+	<script>
+		SF.attachListener( document.getElementById( 'modal-example' ), 'click', function( evt ) {
+			new SF.modal( {
+				content: '<p>A modal window!</p>'
+			} ).show();
+
+			evt.preventDefault();
+		} );
+	</script>
 </body>
 </html>
