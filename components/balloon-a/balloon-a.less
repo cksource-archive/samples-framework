@@ -40,13 +40,24 @@
 	}
 }
 
-.balloon-a-nw {
+.balloon-a-se,
+.balloon-a-sw {
+	&:before {
+		bottom: -13px;
+		border-width: 15.6px 9px 0 9px;
+		border-color: @balloon-a-background-color transparent transparent transparent;
+	}
+}
+
+.balloon-a-nw,
+.balloon-a-sw {
 	&:before {
 		left: 20px;
 	}
 }
 
-.balloon-a-ne {
+.balloon-a-ne,
+.balloon-a-se {
 	&:before {
 		right: 20px;
 	}

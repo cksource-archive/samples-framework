@@ -379,7 +379,7 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<p><strong>Classes:</strong></p>
 					<ul>
 						<li><code>.balloon-a</code></li>
-						<li><code>.balloon-a-[nw-ne]</code> Specifies the alignment of an arrow.</li>
+						<li><code>.balloon-a-[nw, ne, sw, se]</code> Specifies the alignment of an arrow.</li>
 					</ul>
 				</li>
 
@@ -400,6 +400,8 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 <p>
 	<span class="balloon-a balloon-a-nw">I'm a balloon (arrow NW)</span>
 	<span class="balloon-a balloon-a-ne">I'm a balloon (arrow NE)</span>
+	<span class="balloon-a balloon-a-sw">I'm a balloon (arrow SW)</span>
+	<span class="balloon-a balloon-a-se">I'm a balloon (arrow SE)</span>
 </p>
 				</li>
 			</ul>
@@ -432,24 +434,28 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<p><strong>Example:</strong></p>
 					<p>Anchor element:</p>
 
-<pre><code>&lt;a href=&quot;#&quot; class=&quot;button-a button-a-background&quot;&gt;Button with background&lt;/a&gt;,
-&lt;a href=&quot;#&quot; class=&quot;button-a&quot;&gt;Button without background&lt;/a&gt;
+<pre><code>&lt;a href=&quot;#&quot; class=&quot;button-a button-a-background&quot;&gt;With background&lt;/a&gt;,
+&lt;a href=&quot;#&quot; class=&quot;button-a button-a-soft&quot;&gt;Soft background&lt;/a&gt;,
+&lt;a href=&quot;#&quot; class=&quot;button-a&quot;&gt;Without background&lt;/a&gt;
 </code></pre>
 
 <p>
-	<a href="#" class="button-a button-a-background">Button with background</a>,
-	<a href="#" class="button-a">Button without background</a>
+	<a href="#" class="button-a button-a-background">With background</a>,
+	<a href="#" class="button-a button-a-soft">Soft background</a>,
+	<a href="#" class="button-a">Without background</a>
 </p>
 
 					<p>Button element:</p>
 
-<pre><code>&lt;button class=&quot;button-a button-a-background&quot;&gt;Button with background&lt;/button&gt;,
-&lt;button class=&quot;button-a&quot;&gt;Button without background&lt;/button&gt;
+<pre><code>&lt;button class=&quot;button-a button-a-background&quot;&gt;With background&lt;/button&gt;,
+&lt;button class=&quot;button-a button-a-soft&quot;&gt;Soft background&lt;/button&gt;,
+&lt;button class=&quot;button-a&quot;&gt;Without background&lt;/button&gt;
 </code></pre>
 
 <p>
-	<button class="button-a button-a-background">Button with background</button>,
-	<button class="button-a">Button without background</button>
+	<button class="button-a button-a-background">With background</button>,
+	<button class="button-a button-a-soft">Soft background</button>,
+	<button class="button-a">Without background</button>
 </p>
 
 

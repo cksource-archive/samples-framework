@@ -3,6 +3,8 @@
 
 @button-a-height: 36px;
 
+@button-a-soft-background-color: #e7e7e7;
+
 a, button, input {
 	&.button-a {
 		.border-radius( @global-border-radius );
@@ -48,17 +50,30 @@ a, button, input {
 			} );
 		}
 
+		&:active,
 		&:hover {
 			color: #fff;
 			background: @global-link-font-color-hover;
 		}
 	}
 
-	// It's outside of the namespace above to allow inheritance with :extend().
+	// Those belowe are outside of the namespace above to allow inheritance with :extend().
+
+	&.button-a-soft {
+		background: @button-a-soft-background-color;
+
+		&:active,
+		&:hover {
+			color: darken( @global-font-color, 10% );
+			background: darken( @button-a-soft-background-color, 10% );
+		}
+	}
+
 	&.button-a-background {
 		color: #fff;
 		background: @global-link-font-color;
 
+		&:active,
 		&:hover {
 			color: #fff;
 			background: @global-link-font-color-hover;

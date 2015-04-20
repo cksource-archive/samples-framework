@@ -5,7 +5,7 @@
 @switch-hspacing: .25em;
 @switch-text-padding: .75em;
 @switch-handler-side: 1.5em;
-@switch-width: 2.5 * @switch-handler-side;
+@switch-width: 2.75 * @switch-handler-side;
 @switch-border-radius: 1.5 * @global-border-radius;
 
 .ie8 .switch {
@@ -71,9 +71,9 @@
 		width: @switch-width;
 		padding: 2px;
 		margin: 0 @switch-hspacing;
-		.border-radius( @switch-border-radius );
+		.border-radius( @switch-border-radius + 1px );
 
-		&> .handler {
+		.handler {
 			overflow: hidden;
 			position: relative;
 			display: block;
@@ -88,12 +88,20 @@
 				position: absolute;
 				top: 0;
 				right: 0;
-				bottom: 2px;
+				bottom: 3px;
 				left: 0;
-				background-color: @global-link-font-color;
+
+				background-color: lighten( @global-link-font-color, 3% );
 				.border-bottom-left-radius( @switch-border-radius );
 				.border-bottom-right-radius( @switch-border-radius );
 			}
+		}
+	}
+
+	// Highlight the switcher button on :hover.
+	&:hover {
+		.switch-inner .handler:before {
+			background: lighten( @global-link-font-color, 7% );
 		}
 	}
 
