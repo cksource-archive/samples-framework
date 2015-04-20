@@ -56,6 +56,16 @@ body {
 				color: #fff;
 				background: @global-link-font-color-hover;
 			}
+
+			&:focus {
+				border-color: #66afe9;
+				outline: 0;
+
+				.box-shadow(
+					inset 0 1px 1px rgba(0,0,0,.075),
+					0 0 8px lighten(#66afe9,10%)
+				);
+			}
 		}
 
 		// Those below are outside of the namespace above to allow inheritance with :extend().
