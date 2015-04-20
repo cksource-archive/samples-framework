@@ -75,10 +75,12 @@
 	}
 
 	input, select, textarea:not([class^="cke"]) {
+		.border-radius( @global-border-radius );
+		.box-shadow( inset 0 1px 1px rgba( 0, 0, 0, .08 ) );
+
 		font: inherit;
 		color: inherit;
-		.border-radius( @global-border-radius );
-		.box-shadow( inset 0 1px 1px rgba(0,0,0,.075) );
+
 		border: 1px solid @global-box-border-color;
 		padding: .2em .5em;
 
@@ -87,7 +89,7 @@
 			outline: 0;
 
 			.box-shadow(
-				inset 0 1px 1px rgba(0,0,0,.075),
+				inset 0 1px 1px rgba( 0, 0, 0, .08 ),
 				0 0 8px lighten(#66afe9,10%)
 			);
 		}
@@ -144,9 +146,17 @@
 		margin: @global-flow-vgap 0;
 	}
 
-	input[type="button"] {
-		.appearance( button );
+	input {
+		&[type="text"] {
+			height: 1.8em;
+			line-height: 1.8em;
+		}
+
+		&[type="button"] {
+			.appearance( button );
+		}
 	}
+
 
 	// (#10)
 	kbd {
