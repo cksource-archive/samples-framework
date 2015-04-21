@@ -1,7 +1,7 @@
 // Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
 // Licensed under the terms of the MIT license. See LICENSE.md for details.
 
-.content:extend( .global-styled-links all ) {
+.content {
 	.global-font-size( .875 );
 	overflow: hidden;
 	padding-top: @global-flow-vgap;
@@ -14,7 +14,7 @@
 		margin: .5*@global-flow-vgap 0;
 	}
 
-	ul, ol, pre, blockquote, textarea, .cke {
+	ul, ol, pre, blockquote, textarea:not([class^="cke"]), .cke {
 		margin: 1.25*@global-flow-vgap 0;
 	}
 
@@ -32,6 +32,13 @@
 		border-left: 4px solid @global-link-font-color;
 		padding: @global-flow-vgap 1.5*@global-flow-vgap;
 
+	}
+
+	// Restrict the scope of styled links to a set of common tags within
+	// .content to avoid a collision with CKEditor UI styles. Hopefully
+	// it will be fixed in http://dev.ckeditor.com/ticket/13119.
+	p, ul, ol, blockquote, h1, h2, h3, h4, h5 {
+		.global-styled-links();
 	}
 
 	h1, h2, h3, h4, h5 {
@@ -67,9 +74,25 @@
 		}
 	}
 
-	input, select, textarea, button {
+	input, select, textarea:not([class^="cke"]) {
+		.border-radius( @global-border-radius );
+		.box-shadow( inset 0 1px 1px rgba( 0, 0, 0, .08 ) );
+
 		font: inherit;
 		color: inherit;
+
+		border: 1px solid @global-box-border-color;
+		padding: .2em .5em;
+
+		&:focus {
+			border-color: #66afe9;
+			outline: 0;
+
+			.box-shadow(
+				inset 0 1px 1px rgba( 0, 0, 0, .08 ),
+				0 0 8px lighten(#66afe9,10%)
+			);
+		}
 	}
 
 	// --- Standalone elements --------------------------------------------
@@ -123,9 +146,17 @@
 		margin: @global-flow-vgap 0;
 	}
 
-	input[type="button"] {
-		.appearance( button );
+	input {
+		&[type="text"] {
+			height: 1.8em;
+			line-height: 1.8em;
+		}
+
+		&[type="button"] {
+			.appearance( button );
+		}
 	}
+
 
 	// (#10)
 	kbd {
@@ -190,7 +221,7 @@
 		}
 	}
 
-	textarea {
+	textarea:not([class^="cke"]) {
 		width: 100%;
 	}
 

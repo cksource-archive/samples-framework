@@ -15,7 +15,8 @@
 	background: @color;
 }
 
-.tree-a:extend( .global-styled-links all ) {
+.tree-a {
+	.global-styled-links();
 	// Override grid right-padding.
 	padding-right: 0;
 	text-align: right;
