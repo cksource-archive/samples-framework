@@ -2,7 +2,6 @@
 // Licensed under the terms of the MIT license. See LICENSE.md for details.
 
 @button-a-height: 36px;
-
 @button-a-soft-background-color: #e7e7e7;
 
 body {
@@ -37,22 +36,30 @@ body {
 				padding-right: .8em;
 			}
 
+			.button-a-no-text() {
+				.border-radius( 100px );
+				width: @button-a-height;
+				padding: 0;
+				text-indent: -999px;
+				overflow: hidden;
+				position: relative;
+				text-align: center;
+
+				&:before {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					margin: -9px 0 0 -9px;
+				}
+			}
+
+			&.button-a-no-text {
+				.button-a-no-text();
+			}
+
 			&.button-a-mobile-collapsed {
 				.global-is-mobile( {
-					.border-radius( 100px );
-					width: @button-a-height;
-					padding: 0;
-					text-indent: -999px;
-					overflow: hidden;
-					position: relative;
-					text-align: center;
-
-					&:before {
-						position: absolute;
-						left: 50%;
-						top: 50%;
-						margin: -9px 0 0 -9px;
-					}
+					.button-a-no-text();
 				} );
 			}
 
