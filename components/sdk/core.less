@@ -25,7 +25,8 @@ main {
 	overflow: hidden;
 }
 
-.content {
+// Styles for 1st-level content only.
+main > .content {
 	// A thing border that corresponds with the one of .tree-a.
 	border-width: 1px 0;
 	.global-box-border-gradient( to left );
@@ -54,7 +55,10 @@ main {
 			}
 		}
 	}
+}
 
+// Styles for any SDK content.
+.content {
 	// Used in samples/acfcustom.html.
 	ul {
 		&.spacious li {
