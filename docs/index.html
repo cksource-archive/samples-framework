@@ -55,6 +55,7 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 				<li><a href="#grid">grid</a></li>
 				<li><a href="#header-a">header-a</a></li>
 				<li><a href="#icon">icon</a></li>
+				<li><a href="#modal">modal</a></li>
 				<li><a href="#navigation-a">navigation-a</a></li>
 				<li><a href="#navigation-b">navigation-b</a></li>
 				<li><a href="#switcher">switcher</a></li>
@@ -423,10 +424,18 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 						<li>
 							<p><a href="#button-a/.button-a-background"></a> <code>.button-a-background</code></p>
 							<p>A generic button with a background. Useful for hover/active button states.</p>
+							<p>See: <a href="#global@global-link-font-color">global@global-link-font-color</a>.</p>
+						</li>
 
-							<p>
-								See: <a href="#global@global-link-font-color">global@global-link-font-color</a>.
-							</p>
+						<li>
+							<p><a href="#button-a/.button-a-soft"></a> <code>.button-a-soft</code></p>
+							<p>A generic button with a soft background.</p>
+						</li>
+
+						<li>
+							<p><a href="#button-a/.button-a-no-text"></a> <code>.button-a-no-text</code></p>
+							<p>A generic button with nothing but an icon.</p>
+							<p>See: <a href="#icon">icon</a>.</p>
 						</li>
 					</ul>
 				</li>
@@ -437,27 +446,30 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 <pre><code>&lt;a href=&quot;#&quot; class=&quot;button-a button-a-background&quot;&gt;With background&lt;/a&gt;,
 &lt;a href=&quot;#&quot; class=&quot;button-a button-a-soft&quot;&gt;Soft background&lt;/a&gt;,
 &lt;a href=&quot;#&quot; class=&quot;button-a&quot;&gt;Without background&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button-a button-a-background button-a-no-text icon-pos-left icon-question-mark&quot;&gt;No text&lt;/a&gt;
 </code></pre>
 
-<p>
-	<a href="#" class="button-a button-a-background">With background</a>,
-	<a href="#" class="button-a button-a-soft">Soft background</a>,
-	<a href="#" class="button-a">Without background</a>
-</p>
+					<p>
+						<a href="#" class="button-a button-a-background">With background</a>,
+						<a href="#" class="button-a button-a-soft">Soft background</a>,
+						<a href="#" class="button-a">Without background</a>
+						<a href="#" class="button-a button-a-background button-a-no-text icon-pos-left icon-question-mark">No text</a>
+					</p>
 
 					<p>Button element:</p>
 
 <pre><code>&lt;button class=&quot;button-a button-a-background&quot;&gt;With background&lt;/button&gt;,
 &lt;button class=&quot;button-a button-a-soft&quot;&gt;Soft background&lt;/button&gt;,
 &lt;button class=&quot;button-a&quot;&gt;Without background&lt;/button&gt;
+&lt;button class=&quot;button-a button-a-background button-a-no-text icon-pos-left icon-question-mark&quot;&gt;No text&lt;/button&gt;
 </code></pre>
 
-<p>
-	<button class="button-a button-a-background">With background</button>,
-	<button class="button-a button-a-soft">Soft background</button>,
-	<button class="button-a">Without background</button>
-</p>
-
+					<p>
+						<button class="button-a button-a-background">With background</button>,
+						<button class="button-a button-a-soft">Soft background</button>,
+						<button class="button-a">Without background</button>
+						<button class="button-a button-a-background button-a-no-text icon-pos-left icon-question-mark">No text</button>
+					</p>
 
 				</li>
 			</ul>
@@ -734,6 +746,48 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 					<ul>
 						<li><button class="button-a button-a-background icon-pos-left icon-download">icon-download</button></li>
 					</ul>
+				</li>
+			</ul>
+
+			<h4 id="modal">modal <a href="#modal" class="content-heading-anchor" title="Permalink to this headline">&para;</a></h4>
+			<p>A JavaScript modal component, wrapper for <a href="https://github.com/Nycto/PicoModal">PicoModal</a>.</p>
+			<p class="tip-a"><strong>Note:</strong> PicoModal does not work on IE8.</p>
+
+			<ul>
+				<li>
+					<p><strong>Classes:</strong></p>
+
+					<ul>
+						<li>
+							<code>.modal</code>
+						</li>
+
+						<li>
+							<code>.modal-close</code>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<p><strong>Variables:</strong></p>
+
+					<ul>
+						<li>
+							<code>@modal-close-size</code>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<p><strong>Example:</strong></p>
+
+<pre><code>new SF.modal( {
+	content: &#039;Hello world!&#039;
+} ).show();</code></pre>
+
+					<p>
+						<button class="button-a button-a-background" id="modal-example">Show a modal!</button>
+					</p>
 				</li>
 			</ul>
 
@@ -1192,5 +1246,23 @@ Licensed under the terms of the MIT license. See LICENSE.md for details.
 	<script src="../js/sf.js"></script>
 	<script src="../components/tree-a/js/tree-a.js"></script>
 	<script src="../components/toggler/js/toggler.js"></script>
+	<script src="../components/modal/js/picoModal-2.1.0.min.js"></script>
+	<script src="../components/modal/js/modal.js"></script>
+
+	<script>
+		SF.attachListener( document.getElementById( 'modal-example' ), 'click', function() {
+			new SF.modal( {
+				content: [
+					'<div class="grid-container">',
+						'<h2 class="grid-width-100">I\'m a modal!</h2>',
+						'<div class="grid-width-100">',
+							'<p>Ready for anything you want, <a href="https://github.com/Nycto/PicoModal">JavaScript PicoModal</a> modal comes with default <code>.content</code> class.</p>',
+							'<p>Not that any <strong>fancy</strong> <a href="#">content</a> and <a href="#" class="button-a button-a-background">other components</a> also work here.</p>',
+							'<p>Press <kbd>ESC</kbd>, or click the overlay and I\'m gone.</p>',
+						'</div>',
+					'</div>' ].join( '' )
+			} ).show();
+		} );
+	</script>
 </body>
 </html>
