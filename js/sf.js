@@ -1,7 +1,9 @@
-/*
- Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
- Licensed under the terms of the MIT license. See LICENSE.md for details.
+/**
+ * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ * Licensed under the terms of the MIT license. See LICENSE.md for more information.
  */
+
+/* exported SF */
 
 'use strict';
 
@@ -31,7 +33,7 @@ var SF = ( function() {
 			return function( arr, elem ) {
 				var max = arr.length;
 
-				for( var i = 0; i < max; i++ ) {
+				for ( var i = 0; i < max; i++ ) {
 					if ( arr[ i ] === elem ) {
 						return i;
 					}
@@ -56,7 +58,7 @@ var SF = ( function() {
 		}
 
 		var i = children ? ( children.length || 0 ) : 0;
-		while( i-- ) {
+		while ( i-- ) {
 			SF.accept( children[ i ], visitor );
 		}
 	};

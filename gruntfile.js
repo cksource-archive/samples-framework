@@ -44,7 +44,7 @@ module.exports = function( grunt ) {
 
 			docs: {
 				files: {
-					'docs/css/docs.css' :'docs/less/docs.less'
+					'docs/css/docs.css': 'docs/less/docs.less'
 				},
 
 				options: {
