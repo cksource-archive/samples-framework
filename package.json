@@ -1,6 +1,6 @@
 {
 	"name": "cksource-samples-framework",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Less framework for CKSource samples.",
 	"dependencies": {
 		"grunt": "^0",
